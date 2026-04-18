@@ -34,13 +34,13 @@ INDEX (PÁGINA PRINCIPAL)
     width: 100%;
     height: 100%;
     background-color: black;
-    border-bottom: 4px solid rgb(79, 163, 163);
+    border-bottom: 4px solid #AA0000;
     padding: 0 2rem; /* espaçamento lateral */
 }
 
 /* Títulos do header */
 .h-container h1, .h-container-login h1, .c-container h1 {
-    color: rgb(79, 163, 163)
+    color: #AA0000
 }
 
 /* Lista de navegação */
@@ -68,9 +68,11 @@ INDEX (PÁGINA PRINCIPAL)
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 42vh;
+    height: 85vh;
     width: 100%;
-    background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+    background-image: url('../assets/imgs/thorfin_noite.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Container interno do banner */
@@ -138,7 +140,7 @@ INDEX (PÁGINA PRINCIPAL)
 .box h4 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #e40b53;
+    color: #AA0000
 }
 
 /* Texto da caixa */
