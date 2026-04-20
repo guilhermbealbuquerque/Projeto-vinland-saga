@@ -70,7 +70,7 @@ body {
   background-image: url('../assets/imgs/wallpaper_vinland_saga.png');
   background-repeat: no-repeat;
   background-size: cover; 
-  height: 110vh;
+  height: 100%;
 }
 
 .banner .container {
@@ -111,18 +111,33 @@ body {
   margin: 30px;
 }
 
+.container_desc{
+  background-color: #2E4057;
+}
+
+.content_desc{
+  display: flex;
+  justify-content: center; 
+  padding: 50px;
+}
+
+.content_desc span{
+  text-align: center;
+  font-size: 24px;
+}
+
 .social{
   background-color: #2E4057;
 }
 
 .social .container .boxes {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center; 
+  gap: 60px;              
   padding: 30px 0;
 }
 
-.social p {
+.social span {
   font-size: 22px;
   text-align: center;
 }
