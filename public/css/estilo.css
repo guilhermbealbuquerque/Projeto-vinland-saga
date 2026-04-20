@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
 }
 
@@ -66,17 +66,17 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
-  color: #F5F5F5; 
+  color: #F5F5F5;
   background-image: url('../assets/imgs/wallpaper_vinland_saga.png');
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   height: 100%;
 }
 
 .banner .container {
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .banner .container p {
@@ -87,7 +87,7 @@ body {
 }
 
 .banner .container span {
-  color: #A32020 ;
+  color: #A32020;
   font-weight: 800;
 }
 
@@ -107,33 +107,36 @@ body {
   border-radius: 50%;
 }
 
-.box h3{
+.box h3 {
   margin: 30px;
 }
 
-.container_desc{
+.container_desc {
   background-color: #2E4057;
 }
 
-.content_desc{
+.content_desc {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   padding: 50px;
 }
 
-.content_desc span{
+.content_desc span {
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
 }
 
-.social{
+.social {
+  flex: 1;
   background-color: #2E4057;
+  min-width: 100vh;
+  min-height: 90vh;
 }
 
 .social .container .boxes {
   display: flex;
-  justify-content: center; 
-  gap: 60px;              
+  justify-content: center;
+  gap: 60px;
   padding: 30px 0;
 }
 
@@ -144,18 +147,60 @@ body {
 
 .box {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   padding: 55px;
   margin-top: 200px;
   margin-bottom: 200px;
+
+  pointer-events: none;
+}
+
+.box img,
+.popup {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 90%;
+  transform: translateY(-50%);
+
+  width: 260px;
+  padding: 15px;
+
+  background-color: #1A1A1A;
+  color: white;
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.box:hover .popup {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: auto;
+}
+
+.popup span {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 /* FOOTER */
-
 .footer {
   background-color: #1A1A1A;
-  height: 150px;
+  min-height: 150px;
   color: #fff;
   display: flex;
   font-size: 15px;
