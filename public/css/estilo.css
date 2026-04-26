@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap");
 
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: "Barlow", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #2e4057;
 }
@@ -120,27 +123,27 @@ body {
 
 .container_desc {
   display: flex;
-  align-items: center;        
-  justify-content: center;   
-  gap: 150px;                  
-  padding: 80px 10%;          
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  padding: 80px 10%;
   margin-top: 100px;
   background-color: #2e4057;
 }
 
 .content_desc {
-  width: 500px;        
+  width: 500px;
   background-color: #1a1a1a;
   border-radius: 10px;
   padding: 40px;
-  border-left: 2px solid #AA0000; 
+  border-left: 2px solid #aa0000;
 }
 
 .content_desc span {
   font-size: 17px;
   line-height: 1.8;
-  color: #FDFBD4;             
-  text-align: left;          
+  color: #fdfbd4;
+  text-align: left;
 }
 
 .banner-vinland {
@@ -157,15 +160,15 @@ body {
 .social {
   flex: 1;
   background-color: #2e4057;
-  min-width: 100vh;
+  min-width: 100%;
   min-height: 90vh;
 }
 
 .social .container .boxes {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 60px;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .social span {
@@ -192,11 +195,17 @@ body {
   cursor: pointer;
 }
 
+.box img,
+#popup_canute {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 .popup {
   position: absolute;
   z-index: 999;
   top: 50%;
-  left: 90%;
+  left: 85%;
   transform: translateY(-50%);
 
   width: 260px;
@@ -216,6 +225,37 @@ body {
     transform 0.3s ease;
 }
 
+#popup_canute {
+    position: absolute;
+  z-index: 999;
+  top: 50%;
+  right: 85%;
+  transform: translateY(-50%);
+
+  width: 260px;
+  padding: 15px;
+
+  background-color: #1a1a1a;
+  color: white;
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.box:hover #popup_canute {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: auto;
+}
+
+
 .box:hover .popup {
   opacity: 1;
   transform: translateY(-50%) translateX(10px);
@@ -223,6 +263,18 @@ body {
 }
 
 .popup span {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.box:hover #popup_canute {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: auto;
+}
+
+#popup_canute span {
   text-align: center;
   font-size: 14px;
   line-height: 1.7;
@@ -250,8 +302,9 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url("../assets/imgs/bg-jelly-fish-para-home.png");
+  background-image: url(../assets/imgs/wallpaper_vinland_saga-thorffin-2temp.png);
   background-size: cover;
+  background-position: center;
 }
 
 .login .container {
@@ -267,7 +320,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #1a1a1a;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -292,7 +345,7 @@ body {
 }
 
 .formulario input {
-  border: 2px solid #aa0000;
+  border: none;
   text-align: center;
   border-radius: 10px;
   margin: 0;
@@ -323,7 +376,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ed145b;
+  background-color: #000000;
   width: 120px;
   height: 30px;
   align-self: center;
