@@ -1,369 +1,570 @@
-/* Adicionar aqui toda a estilização criada para sua aplicação. */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap");
 
-/* Reset*/
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column; /* organiza em coluna */
-    min-height: 100vh; /* altura mínima da tela inteira */
+  font-family: "Barlow", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111111;
 }
-/*
-INDEX (PÁGINA PRINCIPAL)
-*/
 
-/* Header principal */
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(
+    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  );
+  --tamanho-simulador: calc(
+    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  );
+  --tamanho-login: calc(
+    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  );
+  --tamanho-footer: 65px;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+/* HEADER */
+
 .header {
-    display: flex; /* usa flexbox */
-    align-items: center; /* centraliza verticalmente */
-    justify-content: center; /* centraliza horizontalmente */
-    width: 100%;
-    height: 10vh; /* altura relativa à tela */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.200);
+  height: var(--tamanho-header);
+  background-color: transparent;
+  border-bottom: 2px solid #aa0000;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
-/* Containers do header e conteúdo */
-.h-container, .h-container-login, .c-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* separa itens*/
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    border-bottom: 4px solid #AA0000;
-    padding: 0 2rem; /* espaçamento lateral */
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
-/* Títulos do header */
-.h-container h1, .h-container-login h1, .c-container h1 {
-    color: #AA0000
+.header a {
+  text-decoration: none;
+  color: #e5e5e5;
+  transition: color 0.2s;
 }
 
-/* Lista de navegação */
-.h-container ul, .h-container-login ul, .c-container ul {
-    display: flex;
-    list-style: none; /* remove bolinhas */
-    gap: 2vw; /* espaçamento entre itens */
+.header a:hover {
+  color: #a32020;
 }
 
-/* Itens da lista */
-.h-container ul li, .h-container-login ul li, .c-container ul li {
-    font-size: 1rem;
-    font-weight: 400;
-    color: rgb(190, 190, 99);
+
+.agora {
+  font-weight: 800;
 }
 
-/* Links do menu */
-.h-container ul li a, .h-container-login ul li a, .c-container ul a {
-    text-decoration: none; /* remove sublinhado */
-    color: rgb(190, 190, 99);
+.navbar {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-around;
+  list-style: none;
+  color: #d6c27a;
 }
 
-/* Banner principal */
+.titulo {
+  font-family: Cinzel;
+  color: #aa0000;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* BANNER */
+
 .banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 85vh;
-    width: 100%;
-    background-image: url('../assets/imgs/thorfin_noite.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+  color: #f5f5f5;
+  background-image: url("../assets/imgs/thorfin_noite.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
 }
 
-/* Container interno do banner */
-.b-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* alinhado à esquerda */
-    height: 30%;
-    width: 15%;
+.banner::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 200px;
+
+  background: linear-gradient(to bottom, transparent, #111111);
 }
 
-/* Texto do banner */
-.b-container p {
-    font-size: 2rem;
-    text-align: left;
-    color: white;
-    font-weight: 300;
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(0, 0, 0, 0.1)
+  );
 }
 
-/* Destaque no texto */
-.b-container p span {
-    font-weight: 700; /* negrito */
+.banner .container {
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Seção social */
+.banner .container p {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+}
+
+.banner .container span {
+  color: #a32020;
+  font-weight: 800;
+}
+
+/* DESCRIÇÃO */
+
+.container_desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  padding: 80px 10%;
+  margin-top: 100px;
+}
+
+.content_desc {
+  width: 500px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 40px;
+  border-left: 2px solid #aa0000;
+}
+
+.content_desc span {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #fdfbd4;
+  text-align: left;
+}
+
+.banner-vinland {
+  width: 500px;
+  height: 500px;
+  background-image: url(../assets/imgs/banner-vinland-saga.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(170, 0, 0, 0.3);
+}
+
+/* PERSONAGENS */
+
 .social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35vh;
-    width: 100%;
-    border-bottom: 1px solid;
+  flex: 1;
+  min-width: 100%;
+  min-height: 90vh;
+  display: flex;
 }
 
-/* Container da seção social */
-.s-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 95%;
-    width: 80%;
+.social .container {
+  justify-content: center;
 }
 
-/* Área das caixas */
-.boxes {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
+.social .container .boxes {
+  display: flex;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 20px 0;
 }
 
-/* Cada caixa individual */
-.box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /* itens em coluna */
-    height: 100%;
-    width: 25%;
-    gap: 2vh; /* espaçamento vertical */
+.social span {
+  font-size: 22px;
+  text-align: center;
 }
 
-/* Título da caixa */
-.box h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #AA0000
-}
-
-/* Texto da caixa */
-.box p {
-    text-align: center;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.600);
-    max-width: 50%; /* limita largura */
-}
-
-/* Imagem da caixa */
 .box img {
-    height: 110px;
+  width: 300px;
+  border-radius: 50%;
+  transition: box-shadow 0.3s;
 }
 
-/* Rodapé */
+.box:hover img {
+  box-shadow: 0 0 20px rgba(170, 0, 0, 0.5);
+}
+
+.box h3 {
+  margin: 30px;
+}
+
+.box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  color: #f5f5f5;
+  pointer-events: none;
+}
+
+.box img,
+.popup {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.box img,
+#popup_canute {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 85%;
+  transform: translateY(-50%);
+  width: 260px;
+  padding: 15px;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.popup strong {
+  color: #ff073a;
+}
+
+#popup_canute {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  right: 85%;
+  transform: translateY(-50%);
+  width: 260px;
+  padding: 15px;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+}
+
+#popup_canute strong {
+  color: #ff073a;
+}
+
+.box:hover #popup_canute {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: auto;
+}
+
+.box:hover .popup {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: auto;
+}
+
+.popup span {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+#popup_canute span {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* FOOTER */
+
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    width: 100%;
-    height: 12.8vh;
-    text-align: center;
-    background-color: #3FA7B3;
+  background-color: #1a1a1a;
+  min-height: 150px;
+  color: #fff;
+  display: flex;
+  font-size: 15px;
 }
 
-/* Conteúdo do rodapé */
-.f-container {
-    color: white;
+.footer .container {
+  justify-content: center;
+  text-align: center;
 }
 
-.f-container h4 {
-    font-weight: 400;
+.footer .container .version {
+  font-size: 12px;
 }
 
-/*
-LOGIN
-*/
+/* LOGIN */
 
-/* Fundo da tela de login */
 .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 85vh;
-    width: 100%;
-    background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: var(--tamanho-login);
+  background-image: url(../assets/imgs/wallpaper_vinland_saga-thorffin-2temp.png);
+  background-size: cover;
+  background-position: center;
 }
 
-/* Link "agora" (destaque) */
-.agora a{
-    font-weight: 800;
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-/* Container do login */
-.container-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 50%;
-    width: 50%;
-    border: 1px solid white;
-    border-radius: 0.3rem;
-    background-color: white;
-}
-
-/* Card interno */
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 90%;
-    width: 90%;
+  width: 50%;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #1a1a1a;
+  flex-direction: column;
+  height: fit-content;
+  padding: 20px 0;
 }
 
-/* Título do card */
-.card h2{
-    font-size: 2rem;
-    color: #e40b537a;
-    font-weight: 600;
+.card h2 {
+  margin: 0;
+  font-size: 30px;
 }
 
-/* Formulário */
-.formulario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80%;
-    width: 100%;
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
-/* Campo individual */
-.campo{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    width: 85%;
-    height: 30%;
-    gap: 0.3rem;
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
 }
 
-/* Label do campo */
-.campo span{
-    font-size: 0.9rem;
-    color: #e40b5370;
-    font-weight: 700;
+.formulario input {
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
 }
 
-/* Input */
-.campo input{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 45%;
-    border: 1px solid #3FA7B3;
-    border-radius: 0.3rem;
-    text-align: center;
+.formulario select {
+  border: 2px solid #aa0000;
+  background-color: white;
+  color: gray;
+  height: 36px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
 }
 
-/* Rodapé do login */
-.footer-login{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 4.9vh;
-    text-align: center;
-    background-color: #3FA7B3;
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
 }
 
-/* Botão padrão */
-.botao{
-    background-color: #e40b53;
-    color: white;
-    font-weight: 600;
-    margin-top: 0.5rem;
-    padding: 0.3rem 1.5rem;
-    border: 1px solid;
-    border-radius: 0.3rem;
-    cursor: pointer; /* cursor de clique */
+.botao {
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background-color: #000000;
+  width: 120px;
+  height: 30px;
+  align-self: center;
+  margin-top: 20px;
+  transition: background-color 0.2s;
 }
 
-/*
-CADASTRO
-*/
-
-/* Container de cadastro */
-.container-cadastro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 80%;
-    width: 50%;
-    border: 1px solid white;
-    border-radius: 0.3rem;
-    background-color: white;
+.botao:hover {
+  background-color: #aa0000;
 }
 
-/* Card do cadastro */
-.card-c{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 90%;
-    width: 90%;
+.loading-div {
+  width: 50px;
+  display: none;
 }
 
-/* Título */
-.card-c h2{
-    font-size: 2rem;
-    color: #e40b537a;
-    font-weight: 600;
+.loading-div img {
+  height: 50px;
+  width: 50px;
 }
 
-/* Botão cadastro */
-.botao-c{
-    background-color: #e40b53;
-    color: white;
-    font-weight: 600;
-    padding: 0.3rem 1.5rem;
-    border: 1px solid;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin-top: 1rem;
+#div_erros_login {
+  display: none;
 }
 
-/* Rodapé cadastro */
-.footer-cadastro{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 4.9vh;
-    text-align: center;
-    background-color: #3FA7B3;
+/* FORMULARIO */
+
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.simulador, .container {
-    display: flex;
-    justify-content: center;
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #ed145b 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.formulario .tipo_campo {
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  border: 2px solid #aa0000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #ed145b;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+/* SIMULADOR */
+
+.simulador {
+  color: white;
 }
 
 .simulador .container {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;    
+  flex-direction: column;
+  overflow: scroll;
+  height: var(--tamanho-simulador);
 }
 
-.simulador .container h2 {
-    text-align: center;
-    margin-bottom: 30px;
+/* ALERTA */
+
+#alerta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
-.simulador .container p{
-    margin-top: 20px;
+.mensagem-alarme {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mensagem-alarme h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.mensagem-alarme .informacao {
+  width: 66%;
+}
+
+.alarme-sino {
+  width: 48px;
+  height: 48px;
+  animation-name: bell;
+  animation-duration: 4s;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1157/1157000.png");
+  background-size: cover;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(25deg);
+  }
+  25% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
 }
