@@ -36,11 +36,12 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  background-color: transparent;
-  border-bottom: 2px solid #aa0000;
-  position: fixed;
+  background-color: rgba(10, 5, 5, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(170, 0, 0, 0.4);
   top: 0;
   z-index: 100;
+  width: 100%;
 }
 
 .header .container {
@@ -51,27 +52,56 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e5e5e5;
+  color: #cccccc;
   transition: color 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .header a:hover {
-  color: #a32020;
+  color: #aa0000;
 }
 
-
+.agora a,
 .agora {
-  font-weight: 800;
+  color: #aa0000 !important;
+  font-weight: 700;
 }
 
 .navbar {
-  width: 80%;
   display: flex;
   align-items: center;
-  position: fixed;
-  justify-content: space-around;
+  gap: 32px;
   list-style: none;
-  color: #d6c27a;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .btn-login {
+  background-color: transparent;
+  border: 1px solid #aa0000;
+  border-radius: 5px;
+  padding: 6px 16px;
+  color: #aa0000 !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar .btn-login:hover {
+  background-color: #aa0000;
+  color: white !important;
+}
+
+.navbar .btn-cadastro {
+  background-color: #aa0000;
+  border-radius: 5px;
+  padding: 6px 16px;
+  color: white !important;
+  transition: opacity 0.2s;
+}
+
+.navbar .btn-cadastro:hover {
+  opacity: 0.85;
 }
 
 .titulo {
@@ -332,8 +362,10 @@ body {
 /* LOGIN */
 
 .login {
-  height: var(--tamanho-login);
-  background-image: url(../assets/imgs/wallpaper_vinland_saga-thorffin-2temp.png);
+  min-height: 100vh;
+  padding-top: 80px;
+
+  background-image: url(../assets/imgs/vinland-saga-wallpaper-thorfin-batalha.jpg);
   background-size: cover;
   background-position: center;
 }
