@@ -84,7 +84,9 @@ body {
   border-radius: 5px;
   padding: 6px 16px;
   color: #aa0000 !important;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .navbar .btn-login:hover {
@@ -119,7 +121,7 @@ body {
 
 .banner {
   color: #f5f5f5;
-  background-image: url("../assets/imgs/thorfin_noite.jpg");
+  background-image: url("../assets/vinland_saga/imgs/thorfin_noite.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -153,21 +155,51 @@ body {
 
 .banner .container {
   position: relative;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column; /* 🔥 ISSO resolve */
   min-height: 100vh;
 }
 
-.banner .container p {
+.banner-text1 {
   width: 50%;
   margin: 0;
   padding: 0;
   font-size: 40px;
 }
 
-.banner .container span {
+.banner-text1 span {
   color: #a32020;
   font-weight: 800;
+}
+
+.banner-text2 {
+  margin-top: 100px;
+  font-size: 20px;
+  color: #cfcfcf;
+  font-style: italic;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.banner button {
+  margin-top: 10px;
+  padding: 14px 28px;
+  background-color: #e90000; 
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+
+  transition: all 0.25s ease-in-out; 
+}
+
+.banner button:hover {
+  background-color: #ff1a1a; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 15px rgba(233, 0, 0, 0.4); 
 }
 
 /* DESCRIÇÃO */
@@ -199,7 +231,7 @@ body {
 .banner-vinland {
   width: 500px;
   height: 500px;
-  background-image: url(../assets/imgs/banner-vinland-saga.jpg);
+  background-image: url(../assets/vinland_saga/imgs/banner-vinland-saga.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -307,9 +339,9 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   opacity: 0;
   pointer-events: none;
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 #popup_canute strong {
@@ -365,7 +397,7 @@ body {
   min-height: 100vh;
   padding-top: 80px;
 
-  background-image: url(../assets/imgs/vinland-saga-wallpaper-thorfin-batalha.jpg);
+  background-image: url(../assets/vinland_saga/imgs/vinland-saga-wallpaper-thorfin-batalha.jpg);
   background-size: cover;
   background-position: center;
 }
