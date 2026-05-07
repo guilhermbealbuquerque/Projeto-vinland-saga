@@ -67,7 +67,8 @@ body {
 .agora a,
 .agora {
   color: #aa0000 !important;
-  font-weight: 700;
+  font-weight: 900;
+  font-size: 16px;
 }
 
 .navbar {
@@ -391,6 +392,10 @@ body {
   font-size: 12px;
 }
 
+
+/* ------------------login massa------------------ */
+
+
 .login .container {
   display: flex;
   justify-content: center;
@@ -403,8 +408,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  min-height: 100vh;
-  padding-top: 80px;
+  min-height: 110vh;
+  padding-top: 100px;
   box-sizing: border-box; 
 
   background: url("../assets/vinland_saga/imgs/vinland-saga-login2.jpeg")
@@ -422,7 +427,7 @@ body {
   justify-content: center;
 
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .card h2 {
@@ -432,6 +437,13 @@ body {
   font-size: 24px;
 
   color: white;
+}
+
+.card button:hover{
+  background-color: #aa0000;
+  font-weight: bold; 
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(233, 0, 0, 0.4);
 }
 
 .formulario {
@@ -501,7 +513,8 @@ body {
 }
 
 .loading-div img {
-  width: 50px;
+  width: 100px;
+  height: 100px;
 }
 
 #div_erros_login {
@@ -573,14 +586,15 @@ input {
 }
 
 .loading-div {
-  width: 50px;
+  width: 100px;
   margin: auto;
   display: none;
 }
 
 .loading-div img {
-  height: 50px;
-  width: 50px;
+  display: flex;
+  height: 100px;
+  width: 100px;
 }
 
 /* SIMULADOR */

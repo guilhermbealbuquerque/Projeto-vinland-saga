@@ -1,32 +1,45 @@
-/* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
-/* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
+/* Tema claro */
 
+/* Base: cores ajustadas para light theme */
 :root {
-    --primary-brand-color: #ED145B;
-    --secondary-brand-color: #0762C8;
+    --primary-brand-color: #ED145B; /* cor principal mantém-se */
+    --secondary-brand-color: #0762C8; /* cor secundária mantém-se */
+
     --success: #198754;
     --success-dark: #095c36;
-    --success-light: #9dd3ba;
+    --success-light: #d4f1dc;
+
     --warning: #ffc107;
     --warning-dark: #705400;
-    --warning-light: #fdebb3;
+    --warning-light: #fff4cc;
+
     --danger: #dc3545;
     --danger-dark: #990c19;
-    --danger-light: #f0c1c6;
-    --new-gray: #CCCCCC;
-    --new-black: #212427;
-    --new-white: #E8E8E8;
+    --danger-light: #f8c8cd;
+
+    --new-gray: #7a7a7a; /* cinza médio para contraste */
+    --new-black: #333333; /* não usar preto puro */
+    --new-white: #F5F5F5; /* fundo claro, não branco puro */
 }
 
+/* Estilos globais */
 body {
     color: var(--new-black);
     background-color: var(--new-white);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(./imagem-fundo-quiz.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 button {
     font-family: monospace;
     font-weight: bold;
+    color: var(--new-white);
+    background-color: var(--primary-brand-color);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
 }
 
 .flex-colunar {
@@ -54,21 +67,35 @@ button {
     font-weight: bold;
 }
 
+/* Texto com fundo colorido (alertas) */
 .text-success-with-bg {
     color: var(--success-dark);
     background-color: var(--success-light);
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 .text-warning-with-bg {
     color: var(--warning-dark);
     background-color: var(--warning-light);
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 .text-danger-with-bg {
     color: var(--danger-dark);
     background-color: var(--danger-light);
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 .text-new-gray {
     color: var(--new-gray);
+}
+
+.card-quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
 }
