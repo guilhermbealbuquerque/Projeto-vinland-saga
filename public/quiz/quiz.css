@@ -27,7 +27,7 @@ body {
     color: var(--new-black);
     background-color: var(--new-white);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url(./imagem-fundo-quiz.png);
+    background-image: url(./assets/imgs/imagem-fundo-quiz.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

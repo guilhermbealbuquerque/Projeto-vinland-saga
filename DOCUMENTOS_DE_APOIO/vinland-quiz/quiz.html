@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="esconderQuizAoCarregar()">
+
+    <main class="quiz-layout">
+
+        <section class="titulo-quiz-container">
+
+            <div class="titulo-quiz-content">
+
+                <h1 class="titulo-quiz">
+                    <em>Cu de Burro</em>
+                </h1>
+
+                <p class="subtitulo-quiz">
+                    Responda as perguntas e prove seu conhecimento
+                </p>
+
+            </div>
+
+        </section>
+
+        <section
+            id="containerQuiz"
+            class="quiz-card flex-colunar border-secondary"
+        >
+
+            <div
+                id="containerPerguntaAtual"
+                class="quiz-pergunta-container padding-8"
+            >
+
+                <span
+                    id="textoPerguntaAtual"
+                    class="quiz-pergunta text-bold"
+                ></span>
+
+            </div>
+
+            <div
+                id="informacoesAlternativas"
+                class="quiz-info-alternativas padding-8"
+            >
+
+                <span class="quiz-info-texto">
+                    <em>Escolha uma opção abaixo:</em>
+                </span>
+
+            </div>
+
+            <div
+                id="containerAlternativas"
+                class="quiz-alternativas-container flex-colunar padding-8"
+            >
+
+                <div class="quiz-alternativa-item">
+
+                    <input
+                        type="radio"
+                        id="alternativaUm"
+                        name="alternativa"
+                        class="quiz-radio"
+                        value="alternativaA"
+                    />
+
+                    <label
+                        for="alternativaUm"
+                        class="quiz-opcao"
+                        id="textoAlternativaUm"
+                    ></label>
+
+                </div>
+
+                <div class="quiz-alternativa-item">
+
+                    <input
+                        type="radio"
+                        id="alternativaDois"
+                        name="alternativa"
+                        class="quiz-radio"
+                        value="alternativaB"
+                    />
+
+                    <label
+                        for="alternativaDois"
+                        class="quiz-opcao"
+                        id="textoAlternativaDois"
+                    ></label>
+
+                </div>
+
+                <div class="quiz-alternativa-item">
+
+                    <input
+                        type="radio"
+                        id="alternativaTres"
+                        name="alternativa"
+                        class="quiz-radio"
+                        value="alternativaC"
+                    />
+
+                    <label
+                        for="alternativaTres"
+                        class="quiz-opcao"
+                        id="textoAlternativaTres"
+                    ></label>
+
+                </div>
+
+                <div class="quiz-alternativa-item">
+
+                    <input
+                        type="radio"
+                        id="alternativaQuatro"
+                        name="alternativa"
+                        class="quiz-radio"
+                        value="alternativaD"
+                    />
+
+                    <label
+                        for="alternativaQuatro"
+                        class="quiz-opcao"
+                        id="textoAlternativaQuatro"
+                    ></label>
+
+                </div>
+
+            </div>
+
+            <div
+                id="containerBotoesQuiz"
+                class="quiz-botoes-container flex-colunar padding-8"
+            >
+
+                <button
+                    onclick="submeterResposta()"
+                    id="botaoSubmeterResposta"
+                    class="quiz-botao"
+                >
+                    Submeter resposta
+                </button>
+
+                <button
+                    onclick="proximaQuestao()"
+                    id="botaoProximaQuestao"
+                    class="quiz-botao"
+                    disabled
+                >
+                    Avançar para próxima questão
+                </button>
+
+                <button
+                    onclick="finalizarQuiz()"
+                    id="botaoFinalizarQuiz"
+                    class="quiz-botao"
+                    disabled
+                >
+                    Finalizar Quiz
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+<script>
+    // VARIÁVEIS GLOBAIS
+    let indiceQuestaoAtual = 0;
+    let pontuacaoFinal = 0;
+    let quantidadeErros = 0;
+    let quantidadeAcertos = 0;
+    let quantidadeQuestoes = listaDeQuestoes.length;
+
+    // ESCONDER QUIZ AO CARREGAR
+    function esconderQuizAoCarregar() {
+        document.getElementById("pontuacao").style.display = "none";
+        document.getElementById("containerQuiz").style.display = "none";
+    }
+
+    // INICIAR QUIZ
+    function iniciarQuiz() {
+
+        document.getElementById("pontuacao").style.display = "flex";
+        document.getElementById("containerQuiz").style.display = "flex";
+
+        document.getElementById("btnIniciarQuiz").style.display = "none";
+
+        document.getElementById("totalQuestoes").innerHTML = quantidadeQuestoes;
+
+        preencherQuestaoAtual(0);
+
+        botaoSubmeterResposta.disabled = false;
+        botaoProximaQuestao.disabled = true;
+        botaoReiniciarQuiz.disabled = true;
+    }
+
+    // PREENCHER QUESTÃO
+    function preencherQuestaoAtual(indiceQuestao) {
+
+        habilitarAlternativas(true);
+
+        const questaoAtual = listaDeQuestoes[indiceQuestao];
+
+        indiceQuestaoAtual = indiceQuestao;
+
+        document.getElementById("numeroQuestaoAtual").innerHTML = indiceQuestao + 1;
+
+        document.getElementById("textoPerguntaAtual").innerHTML =
+            questaoAtual.pergunta;
+
+        document.getElementById("textoAlternativaUm").innerHTML =
+            questaoAtual.alternativaA;
+
+        document.getElementById("textoAlternativaDois").innerHTML =
+            questaoAtual.alternativaB;
+
+        document.getElementById("textoAlternativaTres").innerHTML =
+            questaoAtual.alternativaC;
+
+        document.getElementById("textoAlternativaQuatro").innerHTML =
+            questaoAtual.alternativaD;
+    }
+</script>
