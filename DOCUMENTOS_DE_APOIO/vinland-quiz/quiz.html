@@ -1,168 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo - Quiz</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
-<body onload="esconderQuizAoCarregar()">
+<body>
 
-    <main class="quiz-layout">
+    <main class="layout-quiz">
 
-        <section class="titulo-quiz-container">
 
-            <div class="titulo-quiz-content">
+        <section id="containerQuiz">
 
-                <h1 class="titulo-quiz">
-                    <em>Cu de Burro</em>
-                </h1>
+            <section class="container-titulo-quiz">
 
-                <p class="subtitulo-quiz">
-                    Responda as perguntas e prove seu conhecimento
-                </p>
+                <div class="conteudo-titulo-quiz">
 
-            </div>
+                    <h1 class="titulo-quiz">
+                        <span>Quem é você em vinland Saga?</span>
+                    </h1>
 
-        </section>
+                </div>
 
-        <section
-            id="containerQuiz"
-            class="quiz-card flex-colunar border-secondary"
-        >
+            </section>
 
-            <div
-                id="containerPerguntaAtual"
-                class="quiz-pergunta-container padding-8"
-            >
 
-                <span
-                    id="textoPerguntaAtual"
-                    class="quiz-pergunta text-bold"
-                ></span>
+            <p class="subtitulo-quiz">
+                Responda as perguntas e prove seu conhecimento
+            </p>
+
+            <div id="containerPerguntaAtual" class="container-pergunta-quiz">
+
+                <span id="textoPerguntaAtual" class="pergunta-quiz texto-negrito"></span>
 
             </div>
 
-            <div
-                id="informacoesAlternativas"
-                class="quiz-info-alternativas padding-8"
-            >
+            <div id="informacoesAlternativas" class="informacoes-alternativas">
 
-                <span class="quiz-info-texto">
+                <span class="texto-info-alternativas">
                     <em>Escolha uma opção abaixo:</em>
                 </span>
 
             </div>
 
-            <div
-                id="containerAlternativas"
-                class="quiz-alternativas-container flex-colunar padding-8"
-            >
+            <div id="containerAlternativas" class="container-alternativas flex-colunar">
 
-                <div class="quiz-alternativa-item">
+                <div class="item-alternativa-quiz">
 
-                    <input
-                        type="radio"
-                        id="alternativaUm"
-                        name="alternativa"
-                        class="quiz-radio"
-                        value="alternativaA"
-                    />
+                    <input type="radio" id="alternativaUm" name="alternativa" class="radio-quiz" value="alternativaA">
 
-                    <label
-                        for="alternativaUm"
-                        class="quiz-opcao"
-                        id="textoAlternativaUm"
-                    ></label>
+                    <label for="alternativaUm" class="opcao-quiz" id="textoAlternativaUm"></label>
 
                 </div>
 
-                <div class="quiz-alternativa-item">
+                <div class="item-alternativa-quiz">
 
-                    <input
-                        type="radio"
-                        id="alternativaDois"
-                        name="alternativa"
-                        class="quiz-radio"
-                        value="alternativaB"
-                    />
+                    <input type="radio" id="alternativaDois" name="alternativa" class="radio-quiz" value="alternativaB">
 
-                    <label
-                        for="alternativaDois"
-                        class="quiz-opcao"
-                        id="textoAlternativaDois"
-                    ></label>
+                    <label for="alternativaDois" class="opcao-quiz" id="textoAlternativaDois"></label>
 
                 </div>
 
-                <div class="quiz-alternativa-item">
+                <div class="item-alternativa-quiz">
 
-                    <input
-                        type="radio"
-                        id="alternativaTres"
-                        name="alternativa"
-                        class="quiz-radio"
-                        value="alternativaC"
-                    />
+                    <input type="radio" id="alternativaTres" name="alternativa" class="radio-quiz" value="alternativaC">
 
-                    <label
-                        for="alternativaTres"
-                        class="quiz-opcao"
-                        id="textoAlternativaTres"
-                    ></label>
+                    <label for="alternativaTres" class="opcao-quiz" id="textoAlternativaTres"></label>
 
                 </div>
 
-                <div class="quiz-alternativa-item">
+                <div class="item-alternativa-quiz">
 
-                    <input
-                        type="radio"
-                        id="alternativaQuatro"
-                        name="alternativa"
-                        class="quiz-radio"
-                        value="alternativaD"
-                    />
+                    <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz"
+                        value="alternativaD">
 
-                    <label
-                        for="alternativaQuatro"
-                        class="quiz-opcao"
-                        id="textoAlternativaQuatro"
-                    ></label>
+                    <label for="alternativaQuatro" class="opcao-quiz" id="textoAlternativaQuatro"></label>
 
                 </div>
 
             </div>
 
-            <div
-                id="containerBotoesQuiz"
-                class="quiz-botoes-container flex-colunar padding-8"
-            >
+            <div id="containerBotoesQuiz" class="container-botoes-quiz flex-colunar">
 
-                <button
-                    onclick="submeterResposta()"
-                    id="botaoSubmeterResposta"
-                    class="quiz-botao"
-                >
+                <button id="botaoSubmeterResposta" class="botao-quiz">
                     Submeter resposta
                 </button>
 
-                <button
-                    onclick="proximaQuestao()"
-                    id="botaoProximaQuestao"
-                    class="quiz-botao"
-                    disabled
-                >
+                <button id="botaoProximaQuestao" class="botao-quiz" disabled>
                     Avançar para próxima questão
                 </button>
 
-                <button
-                    onclick="finalizarQuiz()"
-                    id="botaoFinalizarQuiz"
-                    class="quiz-botao"
-                    disabled
-                >
+                <button id="botaoFinalizarQuiz" class="botao-quiz" disabled>
                     Finalizar Quiz
                 </button>
 
