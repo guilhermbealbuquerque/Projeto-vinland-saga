@@ -132,7 +132,7 @@ body {
 
   border-radius: 22px;
 
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 /* TITULO */
@@ -146,7 +146,7 @@ body {
 
   color: var(--vinland-ouro-viking);
 }
-
+þ
 .subtitulo-quiz {
   font-size: 18px;
 

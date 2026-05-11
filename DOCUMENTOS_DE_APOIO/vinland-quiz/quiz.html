@@ -36,7 +36,8 @@
 
             <div id="containerPerguntaAtual" class="container-pergunta-quiz">
 
-                <span id="textoPerguntaAtual" class="pergunta-quiz texto-negrito"></span>
+                <span id="textoPerguntaAtual" class="pergunta-quiz texto-negrito">Lorem, ipsum dolor sit amet
+                    consectetur adipisicing elit. Veniam nam velit quidem ea.</span>
 
             </div>
 
@@ -54,7 +55,8 @@
 
                     <input type="radio" id="alternativaUm" name="alternativa" class="radio-quiz" value="alternativaA">
 
-                    <label for="alternativaUm" class="opcao-quiz" id="textoAlternativaUm"></label>
+                    <label for="alternativaUm" class="opcao-quiz" id="textoAlternativaUm">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.</label>
 
                 </div>
 
@@ -62,7 +64,8 @@
 
                     <input type="radio" id="alternativaDois" name="alternativa" class="radio-quiz" value="alternativaB">
 
-                    <label for="alternativaDois" class="opcao-quiz" id="textoAlternativaDois"></label>
+                    <label for="alternativaDois" class="opcao-quiz" id="textoAlternativaDois">Lorem ipsum dolor sit amet
+                        consectetur.</label>
 
                 </div>
 
@@ -70,7 +73,8 @@
 
                     <input type="radio" id="alternativaTres" name="alternativa" class="radio-quiz" value="alternativaC">
 
-                    <label for="alternativaTres" class="opcao-quiz" id="textoAlternativaTres"></label>
+                    <label for="alternativaTres" class="opcao-quiz" id="textoAlternativaTres">Lorem ipsum dolor sit amet
+                        consectetur.</label>
 
                 </div>
 
@@ -79,7 +83,8 @@
                     <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz"
                         value="alternativaD">
 
-                    <label for="alternativaQuatro" class="opcao-quiz" id="textoAlternativaQuatro"></label>
+                    <label for="alternativaQuatro" class="opcao-quiz" id="textoAlternativaQuatro">Lorem ipsum dolor sit
+                        amet consectetur.</label>
 
                 </div>
 
@@ -88,16 +93,12 @@
             <div id="containerBotoesQuiz" class="container-botoes-quiz flex-colunar">
 
                 <button id="botaoSubmeterResposta" class="botao-quiz">
-                    Submeter resposta
+                    Responder
                 </button>
 
-                <button id="botaoProximaQuestao" class="botao-quiz" disabled>
-                    Avançar para próxima questão
-                </button>
-
-                <button id="botaoFinalizarQuiz" class="botao-quiz" disabled>
+                <!-- <button id="botaoFinalizarQuiz" class="botao-quiz" disabled>
                     Finalizar Quiz
-                </button>
+                </button> -->
 
             </div>
 
@@ -115,7 +116,7 @@
     let quantidadeErros = 0;
     let quantidadeAcertos = 0;
     let quantidadeQuestoes = listaDeQuestoes.length;
-
+    
     // ESCONDER QUIZ AO CARREGAR
     function esconderQuizAoCarregar() {
         document.getElementById("pontuacao").style.display = "none";
