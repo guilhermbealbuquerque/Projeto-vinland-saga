@@ -7,7 +7,7 @@ USE vinland_saga;
 -- TABELA: Usuario
 
 -- Responsável por armazenar os dados dos usuários
-CREATE TABLE Usuario (
+CREATE TABLE usuario (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(120),
     email VARCHAR(120),
@@ -28,7 +28,7 @@ CREATE TABLE Usuario (
 -- TABELA: Quiz
 
 -- Armazena os quizzes disponíveis no sistema
-CREATE TABLE Quiz (
+CREATE TABLE quiz (
     id_quiz INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(45),
     descricao VARCHAR(250)
