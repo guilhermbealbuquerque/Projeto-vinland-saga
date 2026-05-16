@@ -1,16 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
   font-family: "Barlow", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Barlow", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #111111;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--cor-fundo);
+  color: var(--cor-branca);
 }
 
 :root {
@@ -35,6 +46,7 @@ body {
   --cor-vermelho-hover: #ff1a1a;
   --cor-vermelho-secundario: #a32020;
   --cor-vermelho-neon: #ff073a;
+  --cor-vermelho-pastel: #b74b4b;
 
   --cor-texto-principal: #f5f5f5;
   --cor-texto-secundario: #cfcfcf;
@@ -76,23 +88,22 @@ body {
   --vinland-fogo: #ff6b1a;
   --vinland-brasa: #b33939;
 }
+
 .container {
   display: flex;
   width: 80%;
   margin: auto;
 }
 
-/* HEADER */
-
 .header {
-  position: sticky;
-  height: var(--tamanho-header);
-  background-color: rgba(10, 5, 5, 0.85);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(170, 0, 0, 0.4);
+  position: fixed;
   top: 0;
-  z-index: 100;
   width: 100%;
+  height: var(--tamanho-header);
+  background-color: rgba(10, 5, 5, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(170, 0, 0, 0.4);
+  z-index: 100;
 }
 
 .header .container {
@@ -101,70 +112,200 @@ body {
   height: 100%;
 }
 
+.titulo {
+  font-family: "Cinzel", serif;
+  font-size: 2.4rem;
+  color: var(--cor-vermelho-principal);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
 .header a {
-  text-decoration: none;
-  color: #cccccc;
-  transition: color 0.2s;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  color: #ccc;
+  transition: 0.3s ease;
 }
 
 .header a:hover {
-  color: #aa0000;
+  color: var(--cor-vermelho-principal);
 }
 
-.agora a,
-.agora {
-  color: #aa0000 !important;
-  font-weight: 900;
-  font-size: 16px;
+.agora a {
+  color: var(--cor-vermelho-principal) !important;
+  font-weight: 700;
 }
 
-.navbar {
+/* BOTÕES HEADER */
+.btn-login {
+  padding: 0.6rem 1.6rem;
+  border: 1px solid var(--cor-vermelho-principal);
+  border-radius: 6px;
+  color: var(--cor-vermelho-principal) !important;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: var(--cor-vermelho-principal);
+  color: white !important;
+}
+
+.btn-cadastro {
+  padding: 0.6rem 1.6rem;
+  border-radius: 6px;
+  background: var(--cor-vermelho-principal);
+  color: white !important;
+  transition: 0.3s;
+}
+
+.btn-cadastro:hover {
+  background: var(--cor-vermelho-hover);
+}
+
+section {
+  min-height: 100vh;
+  padding: 6rem 9%;
+}
+
+.home {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 32px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 8rem;
 }
 
-.navbar .btn-login {
-  background-color: transparent;
-  border: 1px solid #aa0000;
-  border-radius: 5px;
-  padding: 6px 16px;
-  color: #aa0000 !important;
-  transition:
-    background-color 0.2s,
-    color 0.2s;
+.home-img img {
+  width: 420px;
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 3px solid var(--cor-vermelho-pastel);
+
+  box-shadow: 0 10px 35px var(--cor-vermelho-pastel);
+  transition: 0.4s ease;
 }
 
-.navbar .btn-login:hover {
-  background-color: #aa0000;
-  color: white !important;
+.home-img img:hover {
+  transform: scale(1.05);
 }
 
-.navbar .btn-cadastro {
-  background-color: #aa0000;
-  border-radius: 5px;
-  padding: 6px 16px;
-  color: white !important;
-  transition: opacity 0.2s;
+.home-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.navbar .btn-cadastro:hover {
-  opacity: 0.85;
+.home-content h3 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  font-weight: 600;
 }
 
-.titulo {
-  font-family: Cinzel;
-  color: #aa0000;
-  width: fit-content;
-  font-weight: 500;
+.home-content p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #d6d6d6;
+  max-width: 600px;
 }
 
-.header h1 {
-  margin: 0;
+span {
+  color: var(--cor-vermelho-pastel);
 }
+
+.social-icons {
+  margin: 3rem 0;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--cor-vermelho-pastel);
+  color: var(--cor-vermelho-pastel);
+  font-size: 1.8rem;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--cor-vermelho-pastel);
+  color: var(--cor-preta);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 20px var(--cor-vermelho-pastel);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
+  border: 2px solid var(--cor-vermelho-pastel);
+  color: var(--cor-vermelho-pastel);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--cor-vermelho-pastel);
+  color: var(--cor-preta);
+  transform: scale(1.05);
+}
+
+.typing-text {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.typing-text span::before {
+  content: "Desenvolvedor Web";
+  color: var(--cor-vermelho-pastel);
+  animation: words 16s infinite;
+}
+
+.typing-text span::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 3.9%;
+  background: var(--cor-vermelho-pastel);
+  margin-left: 5px;
+  animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes words {
+  0%,
+  25% {
+    content: "Desenvolvedor Web";
+  }
+  26%,
+  50% {
+    content: "Desenvolvedor de Software";
+  }
+  51%,
+  75% {
+    content: "Estudante de Ciência da Computação (1CCOA)";
+  }
+  76%,
+  100% {
+    content: "Universitário da SPTech";
+  }
+}
+
