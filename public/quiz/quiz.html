@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo - Quiz</title>
+    <title>Vinland Saga - Quiz</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -33,7 +33,8 @@
             <p class="subtitulo-quiz">
                 Responda as perguntas e prove seu conhecimento
             </p>
-
+                   <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz"
+                        value="alternativaD">
             <div id="containerPerguntaAtual" class="container-pergunta-quiz">
 
                 <span id="textoPerguntaAtual" class="pergunta-quiz texto-negrito">Lorem, ipsum dolor sit amet
@@ -51,7 +52,7 @@
 
             <div id="containerAlternativas" class="container-alternativas flex-colunar">
 
-                <div class="item-alternativa-quiz">
+                <div class="item-alternativa-quiz" onclick="responder(1)">
 
                     <input type="radio" id="alternativaUm" name="alternativa" class="radio-quiz" value="alternativaA">
 
@@ -60,7 +61,7 @@
 
                 </div>
 
-                <div class="item-alternativa-quiz">
+                <div class="item-alternativa-quiz" onclick="responder(2)" >
 
                     <input type="radio" id="alternativaDois" name="alternativa" class="radio-quiz" value="alternativaB">
 
@@ -69,7 +70,7 @@
 
                 </div>
 
-                <div class="item-alternativa-quiz">
+                <div class="item-alternativa-quiz" onclick="responder(3)" >
 
                     <input type="radio" id="alternativaTres" name="alternativa" class="radio-quiz" value="alternativaC">
 
@@ -78,7 +79,7 @@
 
                 </div>
 
-                <div class="item-alternativa-quiz">
+                <div class="item-alternativa-quiz" onclick="responder(4)" >
 
                     <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz"
                         value="alternativaD">
@@ -108,5 +109,5 @@
 
 </body>
 
-<script src=""></script>
+<script src="../js/quiz.js"></script>
 </html>
