@@ -135,8 +135,7 @@ body {
   border-radius: 5px;
   padding: 6px 16px;
   color: #aa0000 !important;
-  transition:
-    background-color 0.2s,
+  transition: background-color 0.2s,
     color 0.2s;
 }
 

@@ -1,85 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 :root {
-  /*  TAMANHOS */
 
-  --tamanho-header: 80px;
-
-  --tamanho-banner: calc(
-    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
-  );
-
-  --tamanho-simulador: calc(
-    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
-  );
-
-  --tamanho-login: calc(
-    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
-  );
-
-  --tamanho-footer: 65px;
-
-  /* CORES PRINCIPAIS */
-
-  --cor-fundo: #111111;
-  --cor-fundo-secundario: #1a1a1a;
-  --cor-fundo-card: #2a2a2a;
-
-  --cor-texto-principal: #f5f5f5;
-  --cor-texto-secundario: #cfcfcf;
-
-  --cor-preta: #000000;
   --cor-branca: #ffffff;
-
-  /* VERMELHOS VINLAND SAGA */
+  --cor-texto-secundario: #d0d0d0;
 
   --vinland-sangue: #7a1010;
   --vinland-sangue-vivo: #aa0000;
-  --vinland-sangue-neon: #ff073a;
-  --vinland-brasa: #b33939;
-
-  /* DOURADOS / VIKING*/
 
   --vinland-ouro-viking: #c8a45d;
-  --vinland-dourado-antigo: #8b6b2e;
-
-  --vinland-palha: #fdfbd4;
-  --vinland-pergaminho: #e8d8c0;
-
-  /* METAIS */
-
-  --vinland-ferro: #3b3b3b;
-  --vinland-aco: #71797e;
-  --vinland-armadura: #5f5f5f;
-
-  /* MADEIRA / NAVIO / VILA */
-
-  --vinland-madeira: #4e342e;
-  --vinland-couro: #6d4c41;
-  --vinland-carvao: #2b1d1a;
-
-  /* NATUREZA / MAR NÓRDICO */
-
-  --vinland-mar: #1f3b4d;
-  --vinland-oceano-profundo: #10222e;
-
-  --vinland-floresta: #1f3022;
-  --vinland-musgo: #556b2f;
-
-  --vinland-gelo: #c9d6df;
-  --vinland-nevoa: #8f8f8f;
-
-  /* FOGO / BATALHA */
-
-  --vinland-fogo: #ff6b1a;
-  --vinland-cinza-guerra: #2a2a2a;
-
-  /* CORES EXTRAS*/
-
-  --vinland-noite: #0d0d0d;
-  --vinland-tempestade: #28343f;
-  --vinland-runico: #9b7b45;
-  --vinland-osso: #d8d2c2;
 }
 
 /* RESET */
@@ -99,175 +29,270 @@ body {
 }
 
 body {
+
   display: flex;
   justify-content: center;
   align-items: center;
 
+  padding: 30px;
+
   overflow: hidden;
-  padding: 35px;
 
-  font-family: "Pixelify Sans", sans-serif;
-  color: var(--cor-texto-principal);
+  font-family: "Cinzel", serif;
 
-  background: url(./assets/imgs/imagem-fundo-quiz.png) center/cover no-repeat;
+  color: var(--cor-branca);
+
+  background-image: url("../assets/imgs/imagem-fundo-quiz.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* QUIZ */
 
-#containerQuiz {
-  width: 100vw;
-  height: 100vh;
+.layout-quiz {
 
-  max-width: 1600px;
-  max-height: 900px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#containerQuiz {
+
+  width: 100%;
+  max-width: 1400px;
+
+  padding: 35px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  gap: 18px;
-
-  padding: 22px;
+  gap: 22px;
 
   border-radius: 22px;
 
-  background: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.18);
+
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
 }
 
 /* TITULO */
 
 .container-titulo-quiz {
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.conteudo-titulo-quiz {
+
   text-align: center;
 }
 
 .titulo-quiz {
-  font-size: 55px;
+
+  font-size: 52px;
+  font-weight: 700;
 
   color: var(--vinland-ouro-viking);
 }
-þ
+
 .subtitulo-quiz {
+
   font-size: 18px;
 
+  text-align: center;
+
   color: var(--cor-texto-secundario);
+
+  max-width: 900px;
 }
 
 /* PERGUNTA */
 
 .container-pergunta-quiz {
+
   width: 100%;
   max-width: 1000px;
 
-  padding: 12px;
+  padding: 25px;
 
-  border-radius: 14px;
+  border-radius: 18px;
 
-  background: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.35);
 
   text-align: center;
-
-  font-size: 28px;
 }
 
 .pergunta-quiz {
+
+  font-size: 28px;
+  font-weight: 700;
+
   color: var(--cor-branca);
 }
 
 /* INFO */
 
+.informacoes-alternativas {
+
+  width: 100%;
+  max-width: 1000px;
+
+  text-align: left;
+}
+
 .texto-info-alternativas {
+
   font-size: 15px;
+
+  color: var(--cor-texto-secundario);
 }
 
 /* ALTERNATIVAS */
 
 .container-alternativas {
+
   width: 100%;
   max-width: 1000px;
 
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  gap: 14px;
 }
 
 .item-alternativa-quiz {
+
+  width: 100%;
+
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap: 15px;
 
-  padding: 14px;
+  padding: 18px;
 
-  border-radius: 14px;
+  border-radius: 16px;
 
-  background: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.42);
 
   cursor: pointer;
 
-  transition: 0.25s;
+  transition: 0.2s;
 }
 
 .item-alternativa-quiz:hover {
-  background: rgba(170, 0, 0, 0.6);
+
+  background-color: rgba(170, 0, 0, 0.4);
 }
 
 .radio-quiz {
-  width: 18px;
-  height: 18px;
+
+  width: 20px;
+  height: 20px;
+
+  accent-color: var(--vinland-sangue-vivo);
+
+  cursor: pointer;
 }
 
 .opcao-quiz {
+
+  width: 100%;
+
   font-size: 22px;
+  font-family: "Barlow", sans-serif;
 
   color: var(--cor-branca);
+
+  cursor: pointer;
 }
 
-/* BOTÕES */
+/* BOTÃO */
 
 .container-botoes-quiz {
+
   width: 100%;
   max-width: 1000px;
 
-  display: flex;
-  flex-direction: column;
-
-  gap: 10px;
+  margin-top: 5px;
 }
 
 .botao-quiz {
-  width: 100%;
 
-  padding: 14px;
+  width: 980px;
+
+  padding: 18px;
 
   border: none;
-  border-radius: 14px;
+  border-radius: 16px;
 
-  background: var(--vinland-sangue-vivo);
+  background-color: var(--vinland-sangue-vivo);
 
   color: var(--cor-branca);
 
-  font-family: inherit;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
+
+  font-family: "Cinzel", serif;
 
   cursor: pointer;
 
-  transition: 0.25s;
+  transition: 0.2s;
 }
 
 .botao-quiz:hover {
-  background: var(--vinland-sangue);
+
+  background-color: var(--vinland-sangue);
 }
 
-h1,
-h2,
-h3 {
-  color: var(--vinland-ouro-viking);
+/* ALTERNATIVA SELECIONADA */
+
+.alternativa-selecionada {
+
+  border: 2px solid var(--vinland-ouro-viking);
+
+  background-color: rgba(200, 164, 93, 0.18);
 }
 
-a {
-  color: var(--cor-branca);
-  text-decoration: none;
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  body {
+
+    padding: 12px;
+  }
+
+  #containerQuiz {
+
+    padding: 20px;
+  }
+
+  .titulo-quiz {
+
+    font-size: 34px;
+  }
+
+  .pergunta-quiz {
+
+    font-size: 22px;
+  }
+
+  .opcao-quiz {
+
+    font-size: 18px;
+  }
+
+  .botao-quiz {
+
+    font-size: 18px;
+  }
 }

@@ -2,112 +2,219 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vinland Saga - Quiz</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+
+    <script src="../js/quiz.js" defer></script>
+
 </head>
 
 <body>
 
     <main class="layout-quiz">
 
+        <div id="containerQuiz">
 
-        <section id="containerQuiz">
-
-            <section class="container-titulo-quiz">
+            <div class="container-titulo-quiz">
 
                 <div class="conteudo-titulo-quiz">
 
                     <h1 class="titulo-quiz">
-                        <span>Quem é você em vinland Saga?</span>
+
+                        <span>
+                            Quem é você em Vinland Saga?
+                        </span>
+
                     </h1>
 
                 </div>
 
-            </section>
+            </div>
 
 
             <p class="subtitulo-quiz">
-                Responda as perguntas e prove seu conhecimento
+
+                Responda as perguntas e descubra
+                qual personagem e personalidade
+                mais combinam com você.
+
             </p>
-                   <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz"
-                        value="alternativaD">
-            <div id="containerPerguntaAtual" class="container-pergunta-quiz">
 
-                <span id="textoPerguntaAtual" class="pergunta-quiz texto-negrito">Lorem, ipsum dolor sit amet
-                    consectetur adipisicing elit. Veniam nam velit quidem ea.</span>
 
-            </div>
+            <div
+                id="containerPerguntaAtual"
+                class="container-pergunta-quiz"
+            >
 
-            <div id="informacoesAlternativas" class="informacoes-alternativas">
+                <span
+                    id="pergunta"
+                    class="pergunta-quiz texto-negrito"
+                >
 
-                <span class="texto-info-alternativas">
-                    <em>Escolha uma opção abaixo:</em>
+                    Pergunta do quiz
+
                 </span>
 
             </div>
 
-            <div id="containerAlternativas" class="container-alternativas flex-colunar">
 
-                <div class="item-alternativa-quiz" onclick="responder(1)">
+            <div
+                id="informacoesAlternativas"
+                class="informacoes-alternativas"
+            >
 
-                    <input type="radio" id="alternativaUm" name="alternativa" class="radio-quiz" value="alternativaA">
+                <span class="texto-info-alternativas">
 
-                    <label for="alternativaUm" class="opcao-quiz" id="textoAlternativaUm">Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.</label>
+                    <em>
+                        Escolha uma opção abaixo:
+                    </em>
 
-                </div>
-
-                <div class="item-alternativa-quiz" onclick="responder(2)" >
-
-                    <input type="radio" id="alternativaDois" name="alternativa" class="radio-quiz" value="alternativaB">
-
-                    <label for="alternativaDois" class="opcao-quiz" id="textoAlternativaDois">Lorem ipsum dolor sit amet
-                        consectetur.</label>
-
-                </div>
-
-                <div class="item-alternativa-quiz" onclick="responder(3)" >
-
-                    <input type="radio" id="alternativaTres" name="alternativa" class="radio-quiz" value="alternativaC">
-
-                    <label for="alternativaTres" class="opcao-quiz" id="textoAlternativaTres">Lorem ipsum dolor sit amet
-                        consectetur.</label>
-
-                </div>
-
-                <div class="item-alternativa-quiz" onclick="responder(4)" >
-
-                    <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz"
-                        value="alternativaD">
-
-                    <label for="alternativaQuatro" class="opcao-quiz" id="textoAlternativaQuatro">Lorem ipsum dolor sit
-                        amet consectetur.</label>
-
-                </div>
+                </span>
 
             </div>
 
-            <div id="containerBotoesQuiz" class="container-botoes-quiz flex-colunar">
 
-                <button id="botaoSubmeterResposta" class="botao-quiz">
+            <div
+                id="containerAlternativas"
+                class="container-alternativas"
+            >
+
+                <label
+                    class="item-alternativa-quiz"
+                    onclick="responderPergunta(1)"
+                >
+
+                    <input
+                        type="radio"
+                        id="alternativaUm"
+                        name="alternativa"
+                        class="radio-quiz"
+                    >
+
+                    <span
+                        class="opcao-quiz questNumberText"
+                        id="primeiraQuestao"
+                    >
+
+                        Alternativa 1
+
+                    </span>
+
+                </label>
+
+
+                <label
+                    class="item-alternativa-quiz"
+                    onclick="responderPergunta(2)"
+                >
+
+                    <input
+                        type="radio"
+                        id="alternativaDois"
+                        name="alternativa"
+                        class="radio-quiz"
+                    >
+
+                    <span
+                        class="opcao-quiz questNumberText"
+                        id="segundaQuestao"
+                    >
+
+                        Alternativa 2
+
+                    </span>
+
+                </label>
+
+
+                <label
+                    class="item-alternativa-quiz"
+                    onclick="responderPergunta(3)"
+                >
+
+                    <input
+                        type="radio"
+                        id="alternativaTres"
+                        name="alternativa"
+                        class="radio-quiz"
+                    >
+
+                    <span
+                        class="opcao-quiz questNumberText"
+                        id="terceiraQuestao"
+                    >
+
+                        Alternativa 3
+
+                    </span>
+
+                </label>
+
+
+                <label
+                    class="item-alternativa-quiz"
+                    onclick="responderPergunta(4)"
+                >
+
+                    <input
+                        type="radio"
+                        id="alternativaQuatro"
+                        name="alternativa"
+                        class="radio-quiz"
+                    >
+
+                    <span
+                        class="opcao-quiz questNumberText"
+                        id="quartaQuestao"
+                    >
+
+                        Alternativa 4
+
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <div id="containerBotoesQuiz">
+
+                <button
+                    id="botaoResponder"
+                    class="botao-quiz"
+                    onclick="avancarPergunta()"
+                >
+
                     Responder
+
                 </button>
 
-                <!-- <button id="botaoFinalizarQuiz" class="botao-quiz" disabled>
-                    Finalizar Quiz
-                </button> -->
+            </div>
+
+
+            <div
+                id="containerResultado"
+                class="container-resultado-quiz"
+            >
+
+                <h2 id="resultadoPersonagem"></h2>
+
+                <p id="resultadoPersonalidade"></p>
+
+                <span id="resultadoFrase"></span>
 
             </div>
 
-        </section>
+        </div>
 
     </main>
 
 </body>
 
-<script src="../js/quiz.js"></script>
 </html>
