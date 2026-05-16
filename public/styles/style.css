@@ -85,6 +85,7 @@ body {
 /* HEADER */
 
 .header {
+  position: sticky;
   height: var(--tamanho-header);
   background-color: rgba(10, 5, 5, 0.85);
   backdrop-filter: blur(8px);
@@ -135,7 +136,8 @@ body {
   border-radius: 5px;
   padding: 6px 16px;
   color: #aa0000 !important;
-  transition: background-color 0.2s,
+  transition:
+    background-color 0.2s,
     color 0.2s;
 }
 
@@ -440,9 +442,7 @@ body {
   font-size: 12px;
 }
 
-
 /* ------------------login massa------------------ */
-
 
 .login .container {
   display: flex;
@@ -458,7 +458,7 @@ body {
 
   min-height: 110vh;
   padding-top: 100px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 
   background: url("../assets/vinland_saga/imgs/vinland-saga-login2.jpeg")
     center/cover no-repeat;
@@ -487,9 +487,9 @@ body {
   color: white;
 }
 
-.card button:hover{
+.card button:hover {
   background-color: #aa0000;
-  font-weight: bold; 
+  font-weight: bold;
   transform: translateY(-4px);
   box-shadow: 0 6px 15px rgba(233, 0, 0, 0.4);
 }
