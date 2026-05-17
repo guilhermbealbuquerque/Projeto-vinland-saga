@@ -1,67 +1,46 @@
-var usuarioModel = require("../models/quizModel");
- // var aquarioModel = require("../models/aquarioModel");
+var quizModel = require("../models/quizModel");
 
 function cadastrarQuiz(req, res) {
 
+    // dados vindos do frontend
+    var idUsuario = req.body.idUsuarioServer;
+    var idQuiz = req.body.idQuizServer;
+    var idPersonagem = req.body.personagemServer;
+    var idPersonalidade = req.body.personalidadeServer;
+    var pontuacaoTotal = req.body.pontuacaoTotalServer;
 
-        quizModel.cadastrarQuiz()
-            .then(
-                function (resultadoquiz) {
+    // validações básicas
+    if (idUsuario == undefined) {
+        res.status(400).send("idUsuario está undefined!");
+    } else if (idQuiz == undefined) {
+        res.status(400).send("idQuiz está undefined!");
+    } else if (idPersonagem == undefined) {
+        res.status(400).send("idPersonagem está undefined!");
+    } else if (idPersonalidade == undefined) {
+        res.status(400).send("idPersonalidade está undefined!");
+    } else if (pontuacaoTotal == undefined) {
+        res.status(400).send("pontuacaoTotal está undefined!");
+    } else {
 
-
-                        res.json(resultadoQuiz);
-                        console.log(resultadoQuiz);
-                        
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+        quizModel.cadastrarQuiz(
+            idUsuario,
+            idQuiz,
+            idPersonagem,
+            idPersonalidade,
+            pontuacaoTotal
+        )
+        .then(function (resultado) {
+            console.log(resultado);
+            res.json(resultado);
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            console.log("\nHouve um erro ao salvar o resultado do quiz: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
     }
-
-
-
-// function cadastrar(req, res) {
-//     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-//     var nome = req.body.nomeServer;
-//     var email = req.body.emailServer;
-//     var senha = req.body.senhaServer;
-//     // var fkEmpresa = req.body.idEmpresaVincularServer;
-
-//     // Faça as validações dos valores
-//     if (nome == undefined) {
-//         res.status(400).send("Seu nome está undefined!");
-//     } else if (email == undefined) {
-//         res.status(400).send("Seu email está undefined!");
-//     } else if (senha == undefined) {
-//         res.status(400).send("Sua senha está undefined!");
-//     } //else if (fkEmpresa == undefined) {
-//        // res.status(400).send("Sua empresa a vincular está undefined!");
-//   //  } 
-//     else {
-
-//         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-//         usuarioModel.cadastrar(nome, email, senha)
-//             .then(
-//                 function (resultado) {
-//                     res.json(resultado);
-//                 }
-//             ).catch(
-//                 function (erro) {
-//                     console.log(erro);
-//                     console.log(
-//                         "\nHouve um erro ao realizar o cadastro! Erro: ",
-//                         erro.sqlMessage
-//                     );
-//                     res.status(500).json(erro.sqlMessage);
-//                 }
-//             );
-//     }
-// }
+}
 
 module.exports = {
- cadastrarQuiz
-}
+    cadastrarQuiz
+};

@@ -384,16 +384,6 @@ carregarPergunta();
 // Carrega pergunta atual
 
 function carregarPergunta() {
-
-    // Verifica se terminou o quiz
-
-    if (indicePerguntaAtual >= perguntasQuiz.length) {
-
-        finalizarQuiz();
-
-        return;
-    }
-
     // Impede avançar sem responder
 
     if (

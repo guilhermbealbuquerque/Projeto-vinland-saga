@@ -48,6 +48,86 @@ body {
   background-repeat: no-repeat;
 }
 
+/* .container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--tamanho-header);
+  background-color: rgba(10, 5, 5, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(170, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.titulo {
+  font-family: "Cinzel", serif;
+  font-size: 2.4rem;
+  color: var(--cor-vermelho-principal);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.header a {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ccc;
+  transition: 0.3s ease;
+}
+
+.header a:hover {
+  color: var(--cor-vermelho-principal);
+}
+
+.agora a {
+  color: var(--cor-vermelho-principal) !important;
+  font-weight: 700;
+}
+
+/* BOTÕES HEADER */
+.btn-login {
+  padding: 0.6rem 1.6rem;
+  border: 1px solid var(--cor-vermelho-principal);
+  border-radius: 6px;
+  color: var(--cor-vermelho-principal) !important;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: var(--cor-vermelho-principal);
+  color: white !important;
+}
+
+.btn-cadastro {
+  padding: 0.6rem 1.6rem;
+  border-radius: 6px;
+  background: var(--cor-vermelho-principal);
+  color: white !important;
+  transition: 0.3s;
+}
+
+.btn-cadastro:hover {
+  background: var(--cor-vermelho-hover);
+} */
+
 /* QUIZ */
 
 .layout-quiz {
