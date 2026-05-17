@@ -365,6 +365,8 @@ let ultimoBotaoSelecionado;
 
 let respostaProcessada = false;
 
+let id_quiz = 1;
+
 
 // Verifica login
 
@@ -586,6 +588,9 @@ function finalizarQuiz() {
 
             idUsuarioServer:
                 sessionStorage.ID_USUARIO,
+
+            idQuizServer:
+                id_quiz,
 
             personagemServer:
                 idPersonagemFinal,

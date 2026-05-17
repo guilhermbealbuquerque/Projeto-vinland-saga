@@ -65,10 +65,8 @@ CREATE TABLE resultado_quiz (
     fk_quiz INT,
 
     fk_personagem INT,
-    fk_personalidade INT,
-
-    pontuacao_total INT,
-
+    fk_personalidade INT
+    
     data_resultado DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT fkResultadoUsuario

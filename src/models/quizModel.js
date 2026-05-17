@@ -14,14 +14,12 @@ function cadastrarQuiz(
             fk_usuario,
             fk_quiz,
             fk_personagem,
-            fk_personalidade,
-            pontuacao_total
+            fk_personalidade
         ) VALUES (
             ${idUsuario},
             ${idQuiz},
             ${idPersonagem},
-            ${idPersonalidade},
-            ${pontuacaoTotal}
+            ${idPersonalidade}
         );
     `;
 

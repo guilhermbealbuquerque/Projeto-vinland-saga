@@ -7,6 +7,7 @@ function cadastrarQuiz(req, res) {
     var idQuiz = req.body.idQuizServer;
     var idPersonagem = req.body.personagemServer;
     var idPersonalidade = req.body.personalidadeServer;
+    var pontuacaoTotal = req.body.pontuacaoTotalServer;
 
     // validações básicas
     if (idUsuario == undefined) {
