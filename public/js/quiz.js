@@ -75,6 +75,56 @@ let personalidades = {
     }
 };
 
+let id_personagem = {
+    'Canute': 1,
+    'Bjorn': 2,
+    'Thorkell': 3,
+    'Askeladd': 4,
+    'Thors': 5,
+    'Thorgil': 6,
+    'Olmar': 7,
+    'Snake': 8,
+    'Arnheid': 9,
+    'Einar': 10
+}
+
+let id_personalidades = {
+    'Filosofia de paz e empatia': 1,
+    'Você não tem inimigos.': 1,
+
+    'Honra e autocontrole': 2,
+    'Um verdadeiro guerreiro não precisa de espada.': 2,
+
+    'Reflexão e maturidade': 3,
+    'A vingança consome mais do que resolve.': 3,
+
+    'Resiliência': 4,
+    'Sobreviver também é uma forma de coragem.': 4,
+
+    'Sabedoria estratégica': 5,
+    'Nem toda batalha vale a pena.': 5,
+
+    'Ambição controlada': 6,
+    'O poder sem propósito leva à destruição.': 6,
+
+    'Natureza protetora': 7,
+    'Quem protege os outros demonstra verdadeira força.': 7,
+
+    'Espírito livre': 8,
+    'A liberdade vale mais que ouro.': 8,
+
+    'Superação pessoal': 9,
+    'O medo pode controlar um homem ou fortalecê-lo.': 9,
+
+    'Liderança e responsabilidade': 10,
+    'Liderar é carregar o peso das escolhas.': 10,
+
+    'Humanidade e dor emocional': 11,
+    'Até os mais fortes carregam cicatrizes.': 11,
+
+    'Mentalidade pacífica': 12,
+    'A paz exige mais coragem que a guerra.': 12
+}
 
 const pesosPerguntas = [
     3,
@@ -356,16 +406,12 @@ const perguntasQuiz = [
 
 
 let indicePerguntaAtual = 0;
-
 let perguntaRespondida = false;
-
 let alternativaSelecionada = 0;
-
 let ultimoBotaoSelecionado;
-
 let respostaProcessada = false;
-
 let id_quiz = 1;
+let contador = 0;
 
 
 // Verifica login
@@ -386,12 +432,17 @@ carregarPergunta();
 // Carrega pergunta atual
 
 function carregarPergunta() {
+
+    // verificando se está no final do quiz
+    if (contador >= 12) {
+        finalizarQuiz();
+        return;
+    }
+
+
     // Impede avançar sem responder
 
-    if (
-        indicePerguntaAtual > 0 &&
-        perguntaRespondida == false
-    ) {
+    if (indicePerguntaAtual > 0 && perguntaRespondida == false) {
         return;
     }
 
@@ -456,6 +507,7 @@ function carregarPergunta() {
     indicePerguntaAtual++;
 
     perguntaRespondida = false;
+    contador++
 }
 
 
@@ -497,6 +549,8 @@ function avancarPergunta() {
 
 function finalizarQuiz() {
 
+    console.log("entrei finalizar quiz");
+
     // Descobre personagem final
 
     let nomesPersonagens =
@@ -505,10 +559,7 @@ function finalizarQuiz() {
     let personagemFinal =
         nomesPersonagens[0];
 
-    for (
-        let i = 1;
-        i < nomesPersonagens.length;
-        i++
+    for (let i = 1; i < nomesPersonagens.length; i++
     ) {
 
         if (
@@ -605,7 +656,7 @@ function finalizarQuiz() {
             if (resposta.ok) {
 
                 window.location.href =
-                    "resultado.html";
+                    "./quizResposta.html";
 
             } else {
 
@@ -621,6 +672,4 @@ function finalizarQuiz() {
 
         });
 }
-
-
 
