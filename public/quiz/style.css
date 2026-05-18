@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 :root {
-
   --cor-branca: #ffffff;
   --cor-texto-secundario: #d0d0d0;
 
@@ -29,7 +28,6 @@ body {
 }
 
 body {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,12 +124,12 @@ body {
 
 .btn-cadastro:hover {
   background: var(--cor-vermelho-hover);
-} */
+}
+*/
 
 /* QUIZ */
 
 .layout-quiz {
-
   width: 100%;
   height: 100%;
 
@@ -141,7 +139,6 @@ body {
 }
 
 #containerQuiz {
-
   width: 100%;
   max-width: 1400px;
 
@@ -163,7 +160,6 @@ body {
 /* TITULO */
 
 .container-titulo-quiz {
-
   width: 100%;
 
   display: flex;
@@ -171,12 +167,10 @@ body {
 }
 
 .conteudo-titulo-quiz {
-
   text-align: center;
 }
 
 .titulo-quiz {
-
   font-size: 52px;
   font-weight: 700;
 
@@ -184,7 +178,6 @@ body {
 }
 
 .subtitulo-quiz {
-
   font-size: 18px;
 
   text-align: center;
@@ -197,7 +190,6 @@ body {
 /* PERGUNTA */
 
 .container-pergunta-quiz {
-
   width: 100%;
   max-width: 1000px;
 
@@ -211,7 +203,6 @@ body {
 }
 
 .pergunta-quiz {
-
   font-size: 28px;
   font-weight: 700;
 
@@ -221,7 +212,6 @@ body {
 /* INFO */
 
 .informacoes-alternativas {
-
   width: 100%;
   max-width: 1000px;
 
@@ -229,7 +219,6 @@ body {
 }
 
 .texto-info-alternativas {
-
   font-size: 15px;
 
   color: var(--cor-texto-secundario);
@@ -238,7 +227,6 @@ body {
 /* ALTERNATIVAS */
 
 .container-alternativas {
-
   width: 100%;
   max-width: 1000px;
 
@@ -249,7 +237,6 @@ body {
 }
 
 .item-alternativa-quiz {
-
   width: 100%;
 
   display: flex;
@@ -269,12 +256,10 @@ body {
 }
 
 .item-alternativa-quiz:hover {
-
   background-color: rgba(170, 0, 0, 0.4);
 }
 
 .radio-quiz {
-
   width: 20px;
   height: 20px;
 
@@ -284,7 +269,6 @@ body {
 }
 
 .opcao-quiz {
-
   width: 100%;
 
   font-size: 22px;
@@ -298,7 +282,6 @@ body {
 /* BOTÃO */
 
 .container-botoes-quiz {
-
   width: 100%;
   max-width: 1000px;
 
@@ -306,7 +289,6 @@ body {
 }
 
 .botao-quiz {
-
   width: 980px;
 
   padding: 18px;
@@ -329,14 +311,12 @@ body {
 }
 
 .botao-quiz:hover {
-
   background-color: var(--vinland-sangue);
 }
 
 /* ALTERNATIVA SELECIONADA */
 
 .alternativa-selecionada {
-
   border: 2px solid var(--vinland-ouro-viking);
 
   background-color: rgba(200, 164, 93, 0.18);
@@ -345,34 +325,27 @@ body {
 /* RESPONSIVO */
 
 @media (max-width: 768px) {
-
   body {
-
     padding: 12px;
   }
 
   #containerQuiz {
-
     padding: 20px;
   }
 
   .titulo-quiz {
-
     font-size: 34px;
   }
 
   .pergunta-quiz {
-
     font-size: 22px;
   }
 
   .opcao-quiz {
-
     font-size: 18px;
   }
 
   .botao-quiz {
-
     font-size: 18px;
   }
 }
