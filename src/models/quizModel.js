@@ -4,8 +4,7 @@ function cadastrarQuiz(
     idUsuario,
     idQuiz,
     idPersonagem,
-    idPersonalidade,
-    pontuacaoTotal
+    idPersonalidade
 ) {
     console.log(">> Salvando resultado do quiz...");
 

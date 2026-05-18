@@ -7,7 +7,6 @@ function cadastrarQuiz(req, res) {
     var idQuiz = req.body.idQuizServer;
     var idPersonagem = req.body.personagemServer;
     var idPersonalidade = req.body.personalidadeServer;
-    var pontuacaoTotal = req.body.pontuacaoTotalServer;
 
     // validações básicas
     if (idUsuario == undefined) {
@@ -18,26 +17,25 @@ function cadastrarQuiz(req, res) {
         res.status(400).send("idPersonagem está undefined!");
     } else if (idPersonalidade == undefined) {
         res.status(400).send("idPersonalidade está undefined!");
-    } else if (pontuacaoTotal == undefined) {
-        res.status(400).send("pontuacaoTotal está undefined!");
-    } else {
+    }
+    else {
 
         quizModel.cadastrarQuiz(
             idUsuario,
             idQuiz,
             idPersonagem,
             idPersonalidade,
-            pontuacaoTotal
+            
         )
-        .then(function (resultado) {
-            console.log(resultado);
-            res.json(resultado);
-        })
-        .catch(function (erro) {
-            console.log(erro);
-            console.log("\nHouve um erro ao salvar o resultado do quiz: ", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        });
+            .then(function (resultado) {
+                console.log(resultado);
+                res.json(resultado);
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao salvar o resultado do quiz: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
     }
 }
 

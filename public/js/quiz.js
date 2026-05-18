@@ -1,4 +1,3 @@
-
 let personagens = {
     Canute: 0,
     Bjorn: 0,
@@ -86,45 +85,22 @@ let id_personagem = {
     'Snake': 8,
     'Arnheid': 9,
     'Einar': 10
-}
+};
 
-let id_personalidades = {
+let id_personalidade = {
     'Filosofia de paz e empatia': 1,
-    'Você não tem inimigos.': 1,
-
     'Honra e autocontrole': 2,
-    'Um verdadeiro guerreiro não precisa de espada.': 2,
-
     'Reflexão e maturidade': 3,
-    'A vingança consome mais do que resolve.': 3,
-
     'Resiliência': 4,
-    'Sobreviver também é uma forma de coragem.': 4,
-
     'Sabedoria estratégica': 5,
-    'Nem toda batalha vale a pena.': 5,
-
     'Ambição controlada': 6,
-    'O poder sem propósito leva à destruição.': 6,
-
     'Natureza protetora': 7,
-    'Quem protege os outros demonstra verdadeira força.': 7,
-
     'Espírito livre': 8,
-    'A liberdade vale mais que ouro.': 8,
-
     'Superação pessoal': 9,
-    'O medo pode controlar um homem ou fortalecê-lo.': 9,
-
     'Liderança e responsabilidade': 10,
-    'Liderar é carregar o peso das escolhas.': 10,
-
     'Humanidade e dor emocional': 11,
-    'Até os mais fortes carregam cicatrizes.': 11,
-
-    'Mentalidade pacífica': 12,
-    'A paz exige mais coragem que a guerra.': 12
-}
+    'Mentalidade pacífica': 12
+};
 
 const pesosPerguntas = [
     3,
@@ -404,85 +380,21 @@ const perguntasQuiz = [
     }
 ];
 
-
 let indicePerguntaAtual = 0;
 let perguntaRespondida = false;
 let alternativaSelecionada = 0;
-let ultimoBotaoSelecionado;
-let respostaProcessada = false;
 let id_quiz = 1;
-let contador = 0;
-
-
-// Verifica login
-
-// if (!sessionStorage.ID_USUARIO) {
-
-//     alert("Faça login antes de responder o quiz.");
-
-//     window.location.href = "login.html";
-// }
-
-
-// Inicia primeira pergunta
 
 carregarPergunta();
 
-
-// Carrega pergunta atual
-
 function carregarPergunta() {
 
-    // verificando se está no final do quiz
-    if (contador >= 12) {
+    if (indicePerguntaAtual >= perguntasQuiz.length) {
         finalizarQuiz();
         return;
     }
 
-
-    // Impede avançar sem responder
-
-    if (indicePerguntaAtual > 0 && perguntaRespondida == false) {
-        return;
-    }
-
-    // Salva pontuação da resposta anterior
-
-    if (respostaProcessada) {
-
-        let perguntaAnterior =
-            perguntasQuiz[indicePerguntaAtual - 1];
-
-        let resultadoResposta =
-            perguntaAnterior.resultado[
-            alternativaSelecionada - 1
-            ];
-
-        let personagemEscolhido =
-            resultadoResposta[0];
-
-        let personalidadeEscolhida =
-            resultadoResposta[1];
-
-        let pesoPergunta =
-            pesosPerguntas[indicePerguntaAtual - 1];
-
-        // Soma personagem
-
-        personagens[personagemEscolhido] +=
-            pesoPergunta;
-
-        // Soma personalidade
-
-        personalidades[
-            personalidadeEscolhida
-        ].pontos += pesoPergunta;
-    }
-
-    let perguntaAtual =
-        perguntasQuiz[indicePerguntaAtual];
-
-    // Atualiza HTML
+    let perguntaAtual = perguntasQuiz[indicePerguntaAtual];
 
     document.getElementById("pergunta").innerHTML =
         perguntaAtual.pergunta;
@@ -499,39 +411,37 @@ function carregarPergunta() {
     document.getElementById("quartaQuestao").innerHTML =
         perguntaAtual.alternativaD;
 
-    // Salva progresso temporário
-
-    sessionStorage.INDICE_PERGUNTA =
-        indicePerguntaAtual;
-
-    indicePerguntaAtual++;
-
     perguntaRespondida = false;
-    contador++
+
+    let alternativas =
+        document.querySelectorAll(".item-alternativa-quiz");
+
+    for (let i = 0; i < alternativas.length; i++) {
+
+        alternativas[i]
+            .classList.remove("alternativa-selecionada");
+    }
 }
-
-
-// Usuário responde pergunta
 
 function responderPergunta(numeroAlternativa) {
 
-    alternativaSelecionada = numeroAlternativa;
+    alternativaSelecionada =
+        numeroAlternativa;
 
     perguntaRespondida = true;
 
-    respostaProcessada = true;
-
-    let alternativas = document.querySelectorAll(".item-alternativa-quiz");
+    let alternativas =
+        document.querySelectorAll(".item-alternativa-quiz");
 
     for (let i = 0; i < alternativas.length; i++) {
-        alternativas[i].classList.remove("alternativa-selecionada");
+
+        alternativas[i]
+            .classList.remove("alternativa-selecionada");
     }
 
     alternativas[numeroAlternativa - 1]
         .classList.add("alternativa-selecionada");
 }
-
-// para avancar pergunta
 
 function avancarPergunta() {
 
@@ -542,16 +452,36 @@ function avancarPergunta() {
         return;
     }
 
+    let perguntaAtual =
+        perguntasQuiz[indicePerguntaAtual];
+
+    let resultadoResposta =
+        perguntaAtual.resultado[
+        alternativaSelecionada - 1
+        ];
+
+    let personagemEscolhido =
+        resultadoResposta[0];
+
+    let personalidadeEscolhida =
+        resultadoResposta[1];
+
+    let pesoPergunta =
+        pesosPerguntas[indicePerguntaAtual];
+
+    personagens[personagemEscolhido] +=
+        pesoPergunta;
+
+    personalidades[
+        personalidadeEscolhida
+    ].pontos += pesoPergunta;
+
+    indicePerguntaAtual++;
+
     carregarPergunta();
 }
 
-// Finaliza quiz
-
 function finalizarQuiz() {
-
-    console.log("entrei finalizar quiz");
-
-    // Descobre personagem final
 
     let nomesPersonagens =
         Object.keys(personagens);
@@ -559,15 +489,11 @@ function finalizarQuiz() {
     let personagemFinal =
         nomesPersonagens[0];
 
-    for (let i = 1; i < nomesPersonagens.length; i++
-    ) {
+    for (let i = 1; i < nomesPersonagens.length; i++) {
 
         if (
-
             personagens[nomesPersonagens[i]] >
-
             personagens[personagemFinal]
-
         ) {
 
             personagemFinal =
@@ -581,22 +507,11 @@ function finalizarQuiz() {
     let personalidadeFinal =
         nomesPersonalidades[0];
 
-    for (
-        let i = 1;
-        i < nomesPersonalidades.length;
-        i++
-    ) {
+    for (let i = 1; i < nomesPersonalidades.length; i++) {
 
         if (
-
-            personalidades[
-                nomesPersonalidades[i]
-            ].pontos >
-
-            personalidades[
-                personalidadeFinal
-            ].pontos
-
+            personalidades[nomesPersonalidades[i]].pontos >
+            personalidades[personalidadeFinal].pontos
         ) {
 
             personalidadeFinal =
@@ -604,14 +519,14 @@ function finalizarQuiz() {
         }
     }
 
+    console.log(sessionStorage.ID_USUARIO);
+    
+
     let idPersonagemFinal =
         id_personagem[personagemFinal];
 
     let idPersonalidadeFinal =
         id_personalidade[personalidadeFinal];
-
-
-    // Salva dados temporários
 
     sessionStorage.PERSONAGEM_FINAL =
         personagemFinal;
@@ -620,12 +535,7 @@ function finalizarQuiz() {
         personalidadeFinal;
 
     sessionStorage.FRASE_FINAL =
-        personalidades[
-            personalidadeFinal
-        ].frase;
-
-
-    // Envia resultado para backend
+        personalidades[personalidadeFinal].frase;
 
     fetch("/quiz/salvarResultado", {
 
@@ -651,25 +561,21 @@ function finalizarQuiz() {
         })
     })
 
-        .then(function (resposta) {
+    .then(function (resposta) {
 
-            if (resposta.ok) {
+        if (resposta.ok) {
 
-                window.location.href =
-                    "./quizResposta.html";
+            window.location.href =
+                "./quizResposta.html";
 
-            } else {
+        } else {
 
-                alert(
-                    "Erro ao salvar resultado."
-                );
-            }
-        })
+            alert("Erro ao salvar resultado.");
+        }
+    })
 
-        .catch(function (erro) {
+    .catch(function (erro) {
 
-            console.log(erro);
-
-        });
+        console.log(erro);
+    });
 }
-

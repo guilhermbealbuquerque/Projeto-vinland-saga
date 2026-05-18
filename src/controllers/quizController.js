@@ -17,16 +17,13 @@ function cadastrarQuiz(req, res) {
         res.status(400).send("idPersonagem está undefined!");
     } else if (idPersonalidade == undefined) {
         res.status(400).send("idPersonalidade está undefined!");
-    } else if (pontuacaoTotal == undefined) {
-        res.status(400).send("pontuacaoTotal está undefined!");
     } else {
 
         quizModel.cadastrarQuiz(
             idUsuario,
             idQuiz,
             idPersonagem,
-            idPersonalidade,
-            pontuacaoTotal
+            idPersonalidade
         )
         .then(function (resultado) {
             console.log(resultado);
