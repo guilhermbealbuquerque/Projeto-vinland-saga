@@ -19,6 +19,7 @@ var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var avisosRouter = require("./src/routes/avisos");
 var quizRouter = require("./src/routes/quiz");
+var quizRespostaRouter = require("./src/routes/quizResposta");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -116,11 +116,13 @@
                         var loginValido = false;
 
                         for (var i = 0; i < dadosUsuario.length; i++) {
-
+                            
+                            
                             if (
                                 emailVar == dadosUsuario[i].email &&
                                 senhaVar == dadosUsuario[i].senha
                             ) {
+                                console.log("oi");
 
                                 loginValido = true;
 
@@ -133,13 +135,15 @@
                         }
 
                         if (loginValido) {
-
+                            console.log("pinto");
+                            
                             cardErro.style.display = "block";
                             mensagem_erro.innerHTML = "Login realizado com sucesso!";
 
-                            setTimeout(function () {
-                                window.location = "./dashboard/cards.html";
-                            }, 2000);
+                            window.location.href = "/dashboard/cards.html";
+                            // setTimeout(function () {
+                            //     window.location = "./dashboard/cards.html";
+                            // }, 2000);
 
                         } else {
 
