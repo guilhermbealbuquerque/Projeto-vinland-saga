@@ -11,8 +11,9 @@
     </style>
 </head>
 
-<body class="body-container">
 
+<!-- chama a função pra buscar os dados no banco -->
+<body class="body-container" onload="obterDados()">
     <div class="container">
 
         <div class="container-quiz">
@@ -38,7 +39,7 @@
                     </div>
 
                     <div class="imagem-personagem">
-                        <img src="./assets/imgs/thorffin.png" alt="Thorfinn">
+                        <img src="./assets/imgs/thorffin.png" alt="Thorfinn" id="img_personagem">
                     </div>
 
                 </div>

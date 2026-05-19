@@ -36,7 +36,7 @@ function buscarResultado(req, res) {
     console.log("Buscando resultado do quiz do usuário: ", idUsuario);
 
    
-    quizModel.buscarResultado(idUsuario)
+    quizRespostaModel.buscarResultado(idUsuario)
         .then(function (resultado) {
 
             

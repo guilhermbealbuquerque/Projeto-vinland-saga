@@ -18,7 +18,8 @@ CREATE TABLE personalidade(
 CREATE TABLE personagem (
     id_personagem INT PRIMARY KEY AUTO_INCREMENT,
 
-    nome VARCHAR(45)
+    nome VARCHAR(45), 
+    descricao_personagem VARCHAR(300)
 );
 
 
@@ -45,11 +46,13 @@ CREATE TABLE usuario (
 
 
 
+
+
+
 -- TABELA: quiz
 
 CREATE TABLE quiz (
     id_quiz INT PRIMARY KEY AUTO_INCREMENT,
-
     titulo VARCHAR(100),
     descricao VARCHAR(255)
 );
@@ -65,7 +68,7 @@ CREATE TABLE resultado_quiz (
     fk_quiz INT,
 
     fk_personagem INT,
-    fk_personalidade INT
+    fk_personalidade INT,
     
     data_resultado DATETIME DEFAULT CURRENT_TIMESTAMP,
 
@@ -148,8 +151,6 @@ INSERT INTO quiz (titulo, descricao) VALUES
 'Quiz de Personalidade Vinland Saga',
 'Descubra qual personagem e personalidade combinam com você'
 );
-
-
 -- SELECTS
 
 SELECT * FROM personagem;
@@ -159,3 +160,5 @@ SELECT * FROM personalidade;
 SELECT * FROM usuario;
 
 SELECT * FROM resultado_quiz;
+
+SELECT id_usuario, nome, email, fk_personagem, fk_personalidade FROM usuario WHERE email = 'guilherme@gmail.com' AND senha = '123456';

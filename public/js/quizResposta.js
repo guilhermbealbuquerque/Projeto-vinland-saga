@@ -1,60 +1,55 @@
 
 function obterDados() {
-    //    aguardar();
 
-    if (!sessionStorage.personagemServer || !sessionStorage.personalidadeServer) {
-        alert("É necessário responder o quiz para ver o resultado do quiz")
-        window.location ="./quiz.html";
+    // Pega o ID do usuário que foi salvo no sessionStorage quando ele fez login
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    // Se não tiver ID, o usuário não está logado — manda para o login
+    if (!idUsuario) {
+        alert("Você precisa estar logado para ver o resultado!");
+        window.location = "../login.html";
+        return; // para a função aqui, não executa o resto
     }
-    else {
-        setInterval(sumirMensagem, 5000)
-    }
-    fetch("/usuarios/autenticar", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
+
+    // Faz GET para a rota que criamos: /quiz/resultado/:idUsuario
+    // Igual ao fetch("/avisos/listar") do mural.html — sem method, sem body
+    fetch(`/quiz/resultado/${idUsuario}`)
+    method: "GET"
+        .then(function (resposta) {
+
+            
+
+            if (resposta.ok) {
+
+                resposta.json().then(function (resultado) {
+
+                    // resultado é uma lista — pegamos a primeira (e única) posição
+                    // esses nomes vêm do AS que colocamos no SQL:
+                    // p.nome AS personagem, pe.nome AS personalidade, pe.descricao
+                    var personagem    = resultado[0].personagem;
+                    var personalidade = resultado[0].personalidade;
+                    var descricao     = resultado[0].descricao;
+
+                    // Coloca os dados nos elementos HTML pelos IDs que você criou
+                    document.getElementById("h1_personagem").innerHTML = personagem;
+                    document.getElementById("h2_personalidade").innerHTML = personalidade;
+                    document.getElementById("span_descricao_personagem").innerHTML = descricao;
+
+                    // Monta o caminho da imagem dinamicamente co
+                    document.getElementById("img_personagem").src = `./assets/imgs/${personagem.toLowerCase()}.png`;
+                });
+
+            } else if (resposta.status == 204) {
+                // 204 para ver se o usuario fez o quiz
+                alert("Você ainda não fez o quiz!");
+                window.location = "./quiz.html";
+
+            } else {
+                console.error("Erro ao buscar resultado: " + resposta.status);
+            }
         })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id_usuario;
-                sessionStorage.PERSONAGEM_FINAL = json.fk_personagem;
-                sessionStorage.PERSONALIDADE_FINAL = json.fk_personalidade;
-                sessionStorage.FRASE_FINAL = json.frase_final;
-
-                // setTimeout(function () {
-                //     window.location = "./dashboard/cards.html";
-                // }, 3000); // apenas para exibir o loading
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar realizar a busca dos dados do QUIZ!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
+        .catch(function (erro) {
+            console.error("Erro na requisição: " + erro);
+        });
 }
 
-function sumirMensagem() {
-    cardErro.style.display = "none"
-}

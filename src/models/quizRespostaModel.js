@@ -58,5 +58,5 @@ function buscarResultado(idUsuario) {
 
 module.exports = {
     cadastrarQuiz,
-    buscarResultado  // exportando a função nova junto com a que já existia
+    buscarResultado
 };

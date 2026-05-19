@@ -15,8 +15,8 @@ function autenticar(email, senha) {
 function cadastrar(nome, email, senha, fk_personagem, fk_personalidade) {
 
     var instrucaoSql = `
-        INSERT INTO usuario (nome, email, senha, fk_personagem, fk_personalidade) VALUES
-        ('${nome}', '${email}', '${senha}', '${fk_personagem}', '${fk_personalidade}');
+        INSERT INTO usuario (nome, email, senha) VALUES
+        ('${nome}', '${email}', '${senha}');
     `;
 
     console.log(instrucaoSql);

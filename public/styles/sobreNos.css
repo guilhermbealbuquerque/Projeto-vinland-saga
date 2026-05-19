@@ -271,7 +271,7 @@ span {
 .typing-text span::before {
   content: "Desenvolvedor Web";
   color: var(--cor-vermelho-pastel);
-  animation: words 16s infinite;
+  animation: words 10s infinite;
 }
 
 .typing-text span::after {
@@ -308,4 +308,3 @@ span {
     content: "Universitário da SPTech";
   }
 }
-
