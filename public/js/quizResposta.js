@@ -1,36 +1,20 @@
 
 function obterDados() {
-//    aguardar();
+    //    aguardar();
 
     if (!sessionStorage.personagemServer || !sessionStorage.personalidadeServer) {
         alert("É necessário responder o quiz para ver o resultado do quiz")
-        window.location("./quiz.html")
-    }
-
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-
-        if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar();
-        return false;
+        window.location ="./quiz.html";
     }
     else {
         setInterval(sumirMensagem, 5000)
     }
-
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
     fetch("/usuarios/autenticar", {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
         })
     }).then(function (resposta) {
         console.log("ESTOU NO THEN DO entrar()!")

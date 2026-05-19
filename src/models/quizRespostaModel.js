@@ -1,15 +1,62 @@
-var database = require("../database/config")
+var database = require("../database/config");
 
-function tratarDados(email, senha, fk_personagem,   fk_personalidade, frase_final) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
+function cadastrarQuiz(
+    idUsuario,
+    idQuiz,
+    idPersonagem,
+    idPersonalidade
+) {
+    console.log(">> Salvando resultado do quiz...");
+
     var instrucaoSql = `
-        SELECT id_usuario, nome, email, fk_personagem, fk_personalidade FROM usuario WHERE email = '${email}' AND senha = '${senha}';
+        INSERT INTO resultado_quiz (
+            fk_usuario,
+            fk_quiz,
+            fk_personagem,
+            fk_personalidade
+        ) VALUES (
+            ${idUsuario},
+            ${idQuiz},
+            ${idPersonagem},
+            ${idPersonalidade}
+        );
     `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+
+    console.log("Executando SQL: \n" + instrucaoSql);
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarResultado(idUsuario) {
+
+    console.log(">> Buscando resultado do quiz do usuário: ", idUsuario);
+
+    // rq = apelido de resultado_quiz  (igual avisoModel usa "a" pra aviso)
+    // p  = apelido de personagem
+    // pe = apelido de personalidade
+    // ORDER BY data_resultado DESC → o mais recente primeiro
+    // LIMIT 1                      → pega só esse primeiro (o mais recente)
+    var instrucaoSql = `
+        SELECT
+            rq.id_resultado,
+            rq.data_resultado,
+            p.nome  AS personagem,
+            pe.nome AS personalidade,
+            pe.descricao
+        FROM resultado_quiz rq
+             JOIN personagem p
+                ON rq.fk_personagem = p.id_personagem
+             JOIN personalidade pe
+                ON rq.fk_personalidade = pe.id_personalidade
+        WHERE rq.fk_usuario = ${idUsuario}
+    `;
+
+    console.log("Executando SQL: \n" + instrucaoSql);
+
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    autenticar,
-    cadastrar
+    cadastrarQuiz,
+    buscarResultado  // exportando a função nova junto com a que já existia
 };
