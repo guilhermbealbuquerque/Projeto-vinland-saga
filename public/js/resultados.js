@@ -18,10 +18,10 @@ const perguntasQuiz = [
     {
         pergunta: "Quando alguém te desrespeita, você normalmente:",
         alternativas: [
-            "Tenta resolver sem violência",       // A → Thorfinn
-            "Parte para o confronto",             // B → Thorkell
-            "Espera o melhor momento para agir",  // C → Askeladd
-            "Ignora e segue em frente"            // D → Leif
+            "Tenta resolver sem violência",       // A - Thorfinn
+            "Parte para o confronto",             // B - Thorkell
+            "Espera o melhor momento para agir",  // C - Askeladd
+            "Ignora e segue em frente"            // D - Leif
         ],
         pontuacao: ["Thorfinn", "Thorkell", "Askeladd", "Leif"]
     },
@@ -29,10 +29,10 @@ const perguntasQuiz = [
     {
         pergunta: "O que mais define um verdadeiro guerreiro?",
         alternativas: [
-            "Proteger os outros",        // A → Thors
-            "Ser o mais forte",          // B → Thorkell
-            "Ser inteligente nas batalhas", // C → Askeladd
-            "Nunca desistir"             // D → Einar
+            "Proteger os outros",        // A - Thors
+            "Ser o mais forte",          // B - Thorkell
+            "Ser inteligente nas batalhas", // C - Askeladd
+            "Nunca desistir"             // D - Einar
         ],
         pontuacao: ["Thors", "Thorkell", "Askeladd", "Einar"]
     },
@@ -40,10 +40,10 @@ const perguntasQuiz = [
     {
         pergunta: "Qual dessas qualidades você mais admira?",
         alternativas: [
-            "Empatia",    // A → Thorfinn
-            "Coragem",    // B → Thors
-            "Estratégia", // C → Canute
-            "Honra"       // D → Snake
+            "Empatia",    // A - Thorfinn
+            "Coragem",    // B - Thors
+            "Estratégia", // C - Canute
+            "Honra"       // D - Snake
         ],
         pontuacao: ["Thorfinn", "Thors", "Canute", "Snake"]
     },
@@ -51,10 +51,10 @@ const perguntasQuiz = [
     {
         pergunta: "Se estivesse em uma guerra, você seria:",
         alternativas: [
-            "O pacificador",              // A → Thorfinn
-            "O guerreiro da linha de frente", // B → Thorkell
-            "O estrategista",             // C → Askeladd
-            "O líder"                     // D → Canute
+            "O pacificador",              // A - Thorfinn
+            "O guerreiro da linha de frente", // B - Thorkell
+            "O estrategista",             // C - Askeladd
+            "O líder"                     // D - Canute
         ],
         pontuacao: ["Thorfinn", "Thorkell", "Askeladd", "Canute"]
     },
@@ -62,10 +62,10 @@ const perguntasQuiz = [
     {
         pergunta: "Quando enfrenta dificuldades, você:",
         alternativas: [
-            "Mantém a calma",             // A → Thors
-            "Luta até o fim",             // B → Thorkell
-            "Analisa todas possibilidades", // C → Canute
-            "Usa a dor para evoluir"      // D → Einar
+            "Mantém a calma",             // A - Thors
+            "Luta até o fim",             // B - Thorkell
+            "Analisa todas possibilidades", // C - Canute
+            "Usa a dor para evoluir"      // D - Einar
         ],
         pontuacao: ["Thors", "Thorkell", "Canute", "Einar"]
     },
@@ -73,10 +73,10 @@ const perguntasQuiz = [
     {
         pergunta: "Qual frase mais combina com você?",
         alternativas: [
-            "Você não tem inimigos",        // A → Thorfinn
-            "A força decide tudo",          // B → Thorkell
-            "Toda batalha exige estratégia", // C → Askeladd
-            "A paz exige coragem"           // D → Thors
+            "Você não tem inimigos",        // A - Thorfinn
+            "A força decide tudo",          // B - Thorkell
+            "Toda batalha exige estratégia", // C - Askeladd
+            "A paz exige coragem"           // D - Thors
         ],
         pontuacao: ["Thorfinn", "Thorkell", "Askeladd", "Thors"]
     },
@@ -84,10 +84,10 @@ const perguntasQuiz = [
     {
         pergunta: "O que mais te motiva?",
         alternativas: [
-            "Paz",              // A → Thorfinn
-            "Poder",            // B → Canute
-            "Objetivos pessoais", // C → Askeladd
-            "Liberdade"         // D → Leif
+            "Paz",              // A - Thorfinn
+            "Poder",            // B - Canute
+            "Objetivos pessoais", // C - Askeladd
+            "Liberdade"         // D - Leif
         ],
         pontuacao: ["Thorfinn", "Canute", "Askeladd", "Leif"]
     },
@@ -95,10 +95,10 @@ const perguntasQuiz = [
     {
         pergunta: "Como as pessoas te enxergam?",
         alternativas: [
-            "Calmo",       // A → Thors
-            "Intimidador", // B → Thorkell
-            "Inteligente", // C → Askeladd
-            "Inspirador"   // D → Canute
+            "Calmo",       // A - Thors
+            "Intimidador", // B - Thorkell
+            "Inteligente", // C - Askeladd
+            "Inspirador"   // D - Canute
         ],
         pontuacao: ["Thors", "Thorkell", "Askeladd", "Canute"]
     },
@@ -106,10 +106,10 @@ const perguntasQuiz = [
     {
         pergunta: "Quando alguém precisa da sua ajuda, você:",
         alternativas: [
-            "Ajuda imediatamente",        // A → Thors
-            "Resolve do seu jeito",       // B → Snake
-            "Pensa na melhor solução",    // C → Canute
-            "Protege a pessoa acima de tudo" // D → Einar
+            "Ajuda imediatamente",        // A - Thors
+            "Resolve do seu jeito",       // B - Snake
+            "Pensa na melhor solução",    // C - Canute
+            "Protege a pessoa acima de tudo" // D - Einar
         ],
         pontuacao: ["Thors", "Snake", "Canute", "Einar"]
     },
@@ -117,10 +117,10 @@ const perguntasQuiz = [
     {
         pergunta: "Qual ambiente mais combina com você?",
         alternativas: [
-            "Uma vila tranquila",    // A → Einar
-            "Um campo de batalha",   // B → Thorkell
-            "Um reino político",     // C → Canute
-            "Uma jornada pelo mundo" // D → Leif
+            "Uma vila tranquila",    // A - Einar
+            "Um campo de batalha",   // B - Thorkell
+            "Um reino político",     // C - Canute
+            "Uma jornada pelo mundo" // D - Leif
         ],
         pontuacao: ["Einar", "Thorkell", "Canute", "Leif"]
     },
@@ -128,10 +128,10 @@ const perguntasQuiz = [
     {
         pergunta: "Qual seu maior medo?",
         alternativas: [
-            "Machucar pessoas",  // A → Thorfinn
-            "Ser fraco",         // B → Thorkell
-            "Fracassar",         // C → Askeladd
-            "Perder quem ama"    // D → Snake
+            "Machucar pessoas",  // A - Thorfinn
+            "Ser fraco",         // B - Thorkell
+            "Fracassar",         // C - Askeladd
+            "Perder quem ama"    // D - Snake
         ],
         pontuacao: ["Thorfinn", "Thorkell", "Askeladd", "Snake"]
     },
@@ -139,10 +139,10 @@ const perguntasQuiz = [
     {
         pergunta: "Como você toma decisões importantes?",
         alternativas: [
-            "Pela empatia",       // A → Thorfinn
-            "Pelo instinto",      // B → Thorkell
-            "Pela lógica",        // C → Canute
-            "Pelos seus princípios" // D → Thors
+            "Pela empatia",       // A - Thorfinn
+            "Pelo instinto",      // B - Thorkell
+            "Pela lógica",        // C - Canute
+            "Pelos seus princípios" // D - Thors
         ],
         pontuacao: ["Thorfinn", "Thorkell", "Canute", "Thors"]
     }

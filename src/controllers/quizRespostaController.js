@@ -25,7 +25,6 @@ function cadastrarQuiz(req, res) {
             idQuiz,
             idPersonagem,
             idPersonalidade,
-            
         )
             .then(function (resultado) {
                 console.log(resultado);

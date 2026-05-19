@@ -491,10 +491,7 @@ function finalizarQuiz() {
 
     for (let i = 1; i < nomesPersonagens.length; i++) {
 
-        if (
-            personagens[nomesPersonagens[i]] >
-            personagens[personagemFinal]
-        ) {
+        if (personagens[nomesPersonagens[i]] > personagens[personagemFinal]) {
 
             personagemFinal =
                 nomesPersonagens[i];
@@ -520,7 +517,7 @@ function finalizarQuiz() {
     }
 
     console.log(sessionStorage.ID_USUARIO);
-    
+
 
     let idPersonagemFinal =
         id_personagem[personagemFinal];
@@ -561,21 +558,26 @@ function finalizarQuiz() {
         })
     })
 
-    .then(function (resposta) {
+        .then(function (resposta) {
 
-        if (resposta.ok) {
+            if (resposta.ok) {
 
-            window.location.href =
-                "./quizResposta.html";
 
-        } else {
+                setTimeout(function () {
+                    window.location.href =
+                        "./quizResposta.html";
+                }, 3000); // apenas para exibir o loading
 
-            alert("Erro ao salvar resultado.");
-        }
-    })
 
-    .catch(function (erro) {
 
-        console.log(erro);
-    });
+            } else {
+
+                alert("Erro ao salvar resultado.");
+            }
+        })
+
+        .catch(function (erro) {
+
+            console.log(erro);
+        });
 }

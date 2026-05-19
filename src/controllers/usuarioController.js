@@ -24,9 +24,9 @@ function autenticar(req, res) {
                             id: resultadoAutenticar[0].id_usuario,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
-                            senha: resultadoAutenticar[0].senha
-                            // personagem: resultadoAutenticar[0].personagem,
-                            // personalidade: resultadoAutenticar[0].personalidade
+                            senha: resultadoAutenticar[0].senha,
+                             personagem: resultadoAutenticar[0].fk_personagem,
+                             personalidade: resultadoAutenticar[0].fk_personalidade
                         });
                         console.log(resultadoAutenticar);
 
