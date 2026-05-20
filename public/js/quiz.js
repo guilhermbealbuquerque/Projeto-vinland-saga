@@ -1,15 +1,25 @@
 let personagens = {
-    Canute: 0,
-    Bjorn: 0,
-    Thorkell: 0,
-    Askeladd: 0,
-    Thors: 0,
-    Thorgil: 0,
-    Thorffin: 0,
-    Olmar: 0,
-    Snake: 0,
-    Arnheid: 0,
-    Einar: 0
+    Canute: "Frio, inteligente e ambicioso.",
+    
+    Bjorn: "Leal, impulsivo e guerreiro.",
+    
+    Thorkell: "Ama batalhas e desafios.",
+    
+    Askeladd: "Estratégico e manipulador.",
+    
+    Thors: "Pacífico, sábio e honrado.",
+    
+    Thorgil: "Brutal e apaixonado pela guerra.",
+    
+    Thorffin: "Busca paz e amadurecimento.",
+    
+    Olmar: "Inseguro e sonhador.",
+    
+    Snake: "Calmo, protetor e habilidoso.",
+    
+    Arnheid: "Gentil e resiliente.",
+    
+    Einar: "Bondoso, trabalhador e otimista."
 };
 
 let personalidades = {
@@ -469,6 +479,8 @@ function finalizarQuiz() {
 
     let personagemFinal = nomesPersonagens[0];
 
+    let descPersonagemFinal = nomesPersonagens[1];
+
     for (let i = 1; i < nomesPersonagens.length; i++) {
 
         if (personagens[nomesPersonagens[i]] > personagens[personagemFinal]) {
@@ -516,6 +528,8 @@ function finalizarQuiz() {
             idQuizServer: id_quiz,
 
             personagemServer: idPersonagemFinal,
+
+            personagemDescServer: descPersonagemFinal,
 
             personalidadeServer: idPersonalidadeFinal
         })

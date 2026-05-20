@@ -1,11 +1,11 @@
 function obterDados() {
     var idUsuario = sessionStorage.ID_USUARIO;
 
-    if (!idUsuario) {
-        alert("Você precisa estar logado para ver o resultado!");
-        window.location = "../login.html";
-        return;
-    }
+    // if (!idUsuario) {
+    //     alert("Você precisa estar logado para ver o resultado!");
+    //     window.location = "../login.html";
+    //     return;
+    // }
 
     fetch(`/quiz/resultado/${idUsuario}`)
         .then(function (resposta) {
@@ -21,7 +21,7 @@ function obterDados() {
 
                     // pega o id para mudar o html
                     document.getElementById("h1_personagem").innerHTML = personagem;
-                    document.getElementById("h2_personalidade").innerHTML = personalidade;
+                    document.getElementById("h2_personalidade").innerHTML = `${personalidade} ${descricao} `;
                     document.getElementById("span_descricao_personagem").innerHTML = descricao;
 
                     // Monta o caminho da imagem para mudar a imagem de acordo com o personagem
