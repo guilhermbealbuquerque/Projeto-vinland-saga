@@ -8,7 +8,7 @@ function cadastrarQuiz(
 ) {
     console.log(">> Salvando resultado do quiz...");
 
-    //autualizando resultado quiz e usuario para a pagina de resultado
+    //autualizando resultado quiz e usuario para a pagina de resultado quiz
     var instrucaoSql = `
         INSERT INTO resultado_quiz (
             fk_usuario,
@@ -31,12 +31,6 @@ function cadastrarQuiz(
 function buscarResultado(idUsuario) {
 
     console.log(">> Buscando resultado do quiz do usuário: ", idUsuario);
-
-    // rq = apelido de resultado_quiz  (igual avisoModel usa "a" pra aviso)
-    // p  = apelido de personagem
-    // pe = apelido de personalidade
-    // ORDER BY data_resultado DESC → o mais recente primeiro
-    // LIMIT 1                      → pega só esse primeiro (o mais recente)
     var instrucaoSql = `
         SELECT
             rq.id_resultado,

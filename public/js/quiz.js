@@ -398,28 +398,21 @@ function carregarPergunta() {
 
     let perguntaAtual = perguntasQuiz[indicePerguntaAtual];
 
-    document.getElementById("pergunta").innerHTML =
-        perguntaAtual.pergunta;
+    document.getElementById("pergunta").innerHTML = perguntaAtual.pergunta;
 
-    document.getElementById("primeiraQuestao").innerHTML =
-        perguntaAtual.alternativaA;
+    document.getElementById("primeiraQuestao").innerHTML = perguntaAtual.alternativaA;
 
-    document.getElementById("segundaQuestao").innerHTML =
-        perguntaAtual.alternativaB;
+    document.getElementById("segundaQuestao").innerHTML = perguntaAtual.alternativaB;
 
-    document.getElementById("terceiraQuestao").innerHTML =
-        perguntaAtual.alternativaC;
+    document.getElementById("terceiraQuestao").innerHTML = perguntaAtual.alternativaC;
 
-    document.getElementById("quartaQuestao").innerHTML =
-        perguntaAtual.alternativaD;
+    document.getElementById("quartaQuestao").innerHTML = perguntaAtual.alternativaD;
 
     perguntaRespondida = false;
 
-    let alternativas =
-        document.querySelectorAll(".item-alternativa-quiz");
+    let alternativas = document.querySelectorAll(".item-alternativa-quiz");
 
     for (let i = 0; i < alternativas.length; i++) {
-
         alternativas[i]
             .classList.remove("alternativa-selecionada");
     }
@@ -432,17 +425,14 @@ function responderPergunta(numeroAlternativa) {
 
     perguntaRespondida = true;
 
-    let alternativas =
-        document.querySelectorAll(".item-alternativa-quiz");
+    let alternativas = document.querySelectorAll(".item-alternativa-quiz");
 
     for (let i = 0; i < alternativas.length; i++) {
 
-        alternativas[i]
-            .classList.remove("alternativa-selecionada");
+        alternativas[i].classList.remove("alternativa-selecionada");
     }
 
-    alternativas[numeroAlternativa - 1]
-        .classList.add("alternativa-selecionada");
+    alternativas[numeroAlternativa - 1].classList.add("alternativa-selecionada");
 }
 
 function avancarPergunta() {
@@ -454,29 +444,19 @@ function avancarPergunta() {
         return;
     }
 
-    let perguntaAtual =
-        perguntasQuiz[indicePerguntaAtual];
+    let perguntaAtual = perguntasQuiz[indicePerguntaAtual];
 
-    let resultadoResposta =
-        perguntaAtual.resultado[
-        alternativaSelecionada - 1
-        ];
+    let resultadoResposta = perguntaAtual.resultado[alternativaSelecionada - 1];
 
-    let personagemEscolhido =
-        resultadoResposta[0];
+    let personagemEscolhido = resultadoResposta[0];
 
-    let personalidadeEscolhida =
-        resultadoResposta[1];
+    let personalidadeEscolhida = resultadoResposta[1];
 
-    let pesoPergunta =
-        pesosPerguntas[indicePerguntaAtual];
+    let pesoPergunta = pesosPerguntas[indicePerguntaAtual];
 
-    personagens[personagemEscolhido] +=
-        pesoPergunta;
+    personagens[personagemEscolhido] += pesoPergunta;
 
-    personalidades[
-        personalidadeEscolhida
-    ].pontos += pesoPergunta;
+    personalidades[ personalidadeEscolhida].pontos += pesoPergunta;
 
     indicePerguntaAtual++;
 
@@ -485,55 +465,41 @@ function avancarPergunta() {
 
 function finalizarQuiz() {
 
-    let nomesPersonagens =
-        Object.keys(personagens);
+    let nomesPersonagens = Object.keys(personagens);
 
-    let personagemFinal =
-        nomesPersonagens[0];
+    let personagemFinal = nomesPersonagens[0];
 
     for (let i = 1; i < nomesPersonagens.length; i++) {
 
         if (personagens[nomesPersonagens[i]] > personagens[personagemFinal]) {
 
-            personagemFinal =
-                nomesPersonagens[i];
+            personagemFinal = nomesPersonagens[i];
         }
     }
 
-    let nomesPersonalidades =
-        Object.keys(personalidades);
+    let nomesPersonalidades = Object.keys(personalidades);
 
-    let personalidadeFinal =
-        nomesPersonalidades[0];
+    let personalidadeFinal = nomesPersonalidades[0];
 
     for (let i = 1; i < nomesPersonalidades.length; i++) {
 
-        if (
-            personalidades[nomesPersonalidades[i]].pontos >
-            personalidades[personalidadeFinal].pontos
-        ) {
+        if (personalidades[nomesPersonalidades[i]].pontos >personalidades[personalidadeFinal].pontos) {
 
-            personalidadeFinal =
-                nomesPersonalidades[i];
+            personalidadeFinal = nomesPersonalidades[i];
         }
     }
 
     console.log(sessionStorage.ID_USUARIO);
 
-    let idPersonagemFinal =
-        id_personagem[personagemFinal];
+    let idPersonagemFinal = id_personagem[personagemFinal];
 
-    let idPersonalidadeFinal =
-        id_personalidade[personalidadeFinal];
+    let idPersonalidadeFinal = id_personalidade[personalidadeFinal];
 
-    sessionStorage.PERSONAGEM_FINAL =
-        personagemFinal;
+    sessionStorage.PERSONAGEM_FINAL = personagemFinal;
 
-    sessionStorage.PERSONALIDADE_FINAL =
-        personalidadeFinal;
+    sessionStorage.PERSONALIDADE_FINAL = personalidadeFinal;
 
-    sessionStorage.FRASE_FINAL =
-        personalidades[personalidadeFinal].frase;
+    sessionStorage.FRASE_FINAL = personalidades[personalidadeFinal].frase;
 
     fetch("/quiz/salvarResultado", {
 
@@ -545,17 +511,13 @@ function finalizarQuiz() {
 
         body: JSON.stringify({
 
-            idUsuarioServer:
-                sessionStorage.ID_USUARIO,
+            idUsuarioServer: sessionStorage.ID_USUARIO,
 
-            idQuizServer:
-                id_quiz,
+            idQuizServer: id_quiz,
 
-            personagemServer:
-                idPersonagemFinal,
+            personagemServer: idPersonagemFinal,
 
-            personalidadeServer:
-                idPersonalidadeFinal
+            personalidadeServer: idPersonalidadeFinal
         })
     })
 
@@ -569,13 +531,11 @@ function finalizarQuiz() {
                 }, 3000);
 
             } else {
-
                 alert("Erro ao salvar resultado.");
             }
         })
 
         .catch(function (erro) {
-
             console.log(erro);
         });
 }

@@ -46,21 +46,19 @@ body {
   background-repeat: no-repeat;
 }
 
-/* .container {
-  display: flex;
-  width: 80%;
-  margin: auto;
-}
+
+
+/* HEADER
 
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  position: sticky;
   height: var(--tamanho-header);
-  background-color: rgba(10, 5, 5, 0.9);
-  backdrop-filter: blur(10px);
+  background-color: rgba(10, 5, 5, 0.85);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(170, 0, 0, 0.4);
+  top: 0;
   z-index: 100;
+  width: 100%;
 }
 
 .header .container {
@@ -69,63 +67,73 @@ body {
   height: 100%;
 }
 
-.titulo {
-  font-family: "Cinzel", serif;
-  font-size: 2.4rem;
-  color: var(--cor-vermelho-principal);
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  gap: 3rem;
-  list-style: none;
-}
-
 .header a {
-  font-size: 1.4rem;
+  text-decoration: none;
+  color: #cccccc;
+  transition: color 0.2s;
+  font-size: 14px;
   font-weight: 500;
-  color: #ccc;
-  transition: 0.3s ease;
+  letter-spacing: 0.04em;
 }
 
 .header a:hover {
-  color: var(--cor-vermelho-principal);
+  color: #aa0000;
 }
 
-.agora a {
-  color: var(--cor-vermelho-principal) !important;
-  font-weight: 700;
+.agora a,
+.agora {
+  color: #aa0000 !important;
+  font-weight: 900;
+  font-size: 16px;
 }
 
-/* BOTÕES HEADER */
-.btn-login {
-  padding: 0.6rem 1.6rem;
-  border: 1px solid var(--cor-vermelho-principal);
-  border-radius: 6px;
-  color: var(--cor-vermelho-principal) !important;
-  transition: 0.3s;
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.btn-login:hover {
-  background: var(--cor-vermelho-principal);
+.navbar .btn-login {
+  background-color: transparent;
+  border: 1px solid #aa0000;
+  border-radius: 5px;
+  padding: 6px 16px;
+  color: #aa0000 !important;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.navbar .btn-login:hover {
+  background-color: #aa0000;
   color: white !important;
 }
 
-.btn-cadastro {
-  padding: 0.6rem 1.6rem;
-  border-radius: 6px;
-  background: var(--cor-vermelho-principal);
+.navbar .btn-cadastro {
+  background-color: #aa0000;
+  border-radius: 5px;
+  padding: 6px 16px;
   color: white !important;
-  transition: 0.3s;
+  transition: opacity 0.2s;
 }
 
-.btn-cadastro:hover {
-  background: var(--cor-vermelho-hover);
+.navbar .btn-cadastro:hover {
+  opacity: 0.85;
 }
-*/
+
+.titulo {
+  font-family: Cinzel;
+  color: #aa0000;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin: 0;
+}
 
 /* QUIZ */
 
@@ -155,7 +163,7 @@ body {
   background-color: rgba(0, 0, 0, 0.18);
 
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
-}
+} */
 
 /* TITULO */
 
