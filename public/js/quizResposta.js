@@ -14,7 +14,6 @@ function obterDados() {
     // Faz GET para a rota que criamos: /quiz/resultado/:idUsuario
     // Igual ao fetch("/avisos/listar") do mural.html — sem method, sem body
     fetch(`/quiz/resultado/${idUsuario}`)
-    method: "GET"
         .then(function (resposta) {
 
             

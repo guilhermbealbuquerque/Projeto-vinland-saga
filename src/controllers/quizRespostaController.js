@@ -1,4 +1,4 @@
-var quizModel = require("../models/quizModel");
+var quizRespostaModel = require("../models/quizModel");
 
 function cadastrarQuiz(req, res) {
 
@@ -16,7 +16,7 @@ function cadastrarQuiz(req, res) {
     } else if (idPersonalidade == undefined) {
         res.status(400).send("idPersonalidade está undefined!");
     } else {
-        quizModel.cadastrarQuiz(idUsuario, idQuiz, idPersonagem, idPersonalidade)
+        quizRespostaModel.cadastrarQuiz(idUsuario, idQuiz, idPersonagem, idPersonalidade)
             .then(function (resultado) {
                 console.log(resultado);
                 res.json(resultado);

@@ -99,10 +99,11 @@ INSERT INTO personagem (nome) VALUES
 ('Askeladd'),   -- id 4
 ('Thors'),      -- id 5
 ('Thorgil'),    -- id 6
-('Olmar'),      -- id 7
-('Snake'),      -- id 8
-('Arnheid'),    -- id 9
-('Einar');      -- id 10
+('Thorffin'),    -- id 7
+('Olmar'),      -- id 8
+('Cobra'),      -- id 9
+('Arnheid'),    -- id 10
+('Einar');      -- id 11
 
 
 -- INSERT PERSONALIDADES

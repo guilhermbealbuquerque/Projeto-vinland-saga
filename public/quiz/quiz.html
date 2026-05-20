@@ -10,14 +10,14 @@
     <title>Vinland Saga - Quiz</title>
 
     <link rel="stylesheet" href="styleQuiz.css">
-
+    <link rel="icon" href="../assets/vinland_saga/icons/icon_viland_saga.png" />
     <script src="../js/quiz.js" defer></script>
 
 </head>
 
 <body>
 
-    
+
     <main class="layout-quiz">
 
         <div id="containerQuiz">
@@ -48,15 +48,9 @@
             </p>
 
 
-            <div
-                id="containerPerguntaAtual"
-                class="container-pergunta-quiz"
-            >
+            <div id="containerPerguntaAtual" class="container-pergunta-quiz">
 
-                <span
-                    id="pergunta"
-                    class="pergunta-quiz texto-negrito"
-                >
+                <span id="pergunta" class="pergunta-quiz texto-negrito">
 
                     Pergunta do quiz
 
@@ -65,10 +59,7 @@
             </div>
 
 
-            <div
-                id="informacoesAlternativas"
-                class="informacoes-alternativas"
-            >
+            <div id="informacoesAlternativas" class="informacoes-alternativas">
 
                 <span class="texto-info-alternativas">
 
@@ -81,27 +72,13 @@
             </div>
 
 
-            <div
-                id="containerAlternativas"
-                class="container-alternativas"
-            >
+            <div id="containerAlternativas" class="container-alternativas">
 
-                <label
-                    class="item-alternativa-quiz"
-                    onclick="responderPergunta(1)"
-                >
+                <label class="item-alternativa-quiz" onclick="responderPergunta(1)">
 
-                    <input
-                        type="radio"
-                        id="alternativaUm"
-                        name="alternativa"
-                        class="radio-quiz"
-                    >
+                    <input type="radio" id="alternativaUm" name="alternativa" class="radio-quiz">
 
-                    <span
-                        class="opcao-quiz questNumberText"
-                        id="primeiraQuestao"
-                    >
+                    <span class="opcao-quiz questNumberText" id="primeiraQuestao">
 
                         Alternativa 1
 
@@ -110,22 +87,11 @@
                 </label>
 
 
-                <label
-                    class="item-alternativa-quiz"
-                    onclick="responderPergunta(2)"
-                >
+                <label class="item-alternativa-quiz" onclick="responderPergunta(2)">
 
-                    <input
-                        type="radio"
-                        id="alternativaDois"
-                        name="alternativa"
-                        class="radio-quiz"
-                    >
+                    <input type="radio" id="alternativaDois" name="alternativa" class="radio-quiz">
 
-                    <span
-                        class="opcao-quiz questNumberText"
-                        id="segundaQuestao"
-                    >
+                    <span class="opcao-quiz questNumberText" id="segundaQuestao">
 
                         Alternativa 2
 
@@ -134,22 +100,11 @@
                 </label>
 
 
-                <label
-                    class="item-alternativa-quiz"
-                    onclick="responderPergunta(3)"
-                >
+                <label class="item-alternativa-quiz" onclick="responderPergunta(3)">
 
-                    <input
-                        type="radio"
-                        id="alternativaTres"
-                        name="alternativa"
-                        class="radio-quiz"
-                    >
+                    <input type="radio" id="alternativaTres" name="alternativa" class="radio-quiz">
 
-                    <span
-                        class="opcao-quiz questNumberText"
-                        id="terceiraQuestao"
-                    >
+                    <span class="opcao-quiz questNumberText" id="terceiraQuestao">
 
                         Alternativa 3
 
@@ -158,22 +113,11 @@
                 </label>
 
 
-                <label
-                    class="item-alternativa-quiz"
-                    onclick="responderPergunta(4)"
-                >
+                <label class="item-alternativa-quiz" onclick="responderPergunta(4)">
 
-                    <input
-                        type="radio"
-                        id="alternativaQuatro"
-                        name="alternativa"
-                        class="radio-quiz"
-                    >
+                    <input type="radio" id="alternativaQuatro" name="alternativa" class="radio-quiz">
 
-                    <span
-                        class="opcao-quiz questNumberText"
-                        id="quartaQuestao"
-                    >
+                    <span class="opcao-quiz questNumberText" id="quartaQuestao">
 
                         Alternativa 4
 
@@ -186,11 +130,7 @@
 
             <div id="containerBotoesQuiz">
 
-                <button
-                    id="botaoResponder"
-                    class="botao-quiz"
-                    onclick="avancarPergunta()"
-                >
+                <button id="botaoResponder" class="botao-quiz" onclick="avancarPergunta()">
 
                     Responder
 
@@ -199,10 +139,7 @@
             </div>
 
 
-            <div
-                id="containerResultado"
-                class="container-resultado-quiz"
-            >
+            <div id="containerResultado" class="container-resultado-quiz">
 
                 <h2 id="resultadoPersonagem"></h2>
 
