@@ -442,7 +442,7 @@ body {
   font-size: 12px;
 }
 
-/* ------------------login massa------------------ */
+/* login massa */
 
 .login .container {
   display: flex;
@@ -655,6 +655,121 @@ input {
   flex-direction: column;
   overflow: scroll;
   height: var(--tamanho-simulador);
+}
+
+/* DASHBOARD */
+
+.dashboard {
+  width: 100%;
+  min-height: calc(100vh - var(--tamanho-header));
+  padding: 40px 0;
+}
+
+.container-dashboard {
+  width: 85%;
+  margin: auto;
+}
+
+.topo-dashboard {
+  margin-bottom: 40px;
+}
+
+.topo-dashboard h1 {
+  font-family: "Cinzel", serif;
+  color: var(--cor-texto-dourado);
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.topo-dashboard p {
+  color: var(--cor-texto-secundario);
+  font-size: 16px;
+}
+
+/* KPIS */
+
+.kpis {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.card-kpi {
+  flex: 1;
+  min-width: 220px;
+
+  background-color: var(--cor-fundo-secundario);
+
+  border-radius: 8px;
+  border-top: 3px solid var(--cor-vermelho-principal);
+
+  padding: 25px;
+
+  text-align: center;
+}
+
+.card-kpi h3 {
+  color: var(--cor-texto-dourado);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.card-kpi h1 {
+  color: var(--cor-branca);
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-kpi span {
+  color: var(--cor-texto-claro);
+  font-size: 14px;
+}
+
+/* GRÁFICOS */
+
+.graficos {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.container-grafico {
+  flex: 1;
+  min-width: 450px;
+
+  background-color: var(--cor-fundo-secundario);
+
+  border-radius: 8px;
+
+  padding: 25px;
+}
+
+.container-grafico h2 {
+  font-family: "Cinzel", serif;
+  color: var(--cor-texto-dourado);
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.container-grafico canvas {
+  width: 100% !important;
+  height: 350px !important;
+}
+
+/* BOTÃO SAIR */
+
+.logout {
+  color: var(--cor-texto-claro);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout:hover {
+  color: var(--cor-vermelho-principal);
 }
 
 /* ALERTA */

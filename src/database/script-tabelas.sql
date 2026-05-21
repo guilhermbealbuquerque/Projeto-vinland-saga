@@ -92,18 +92,28 @@ CREATE TABLE resultado_quiz (
 
 -- INSERT PERSONAGENS
 
-INSERT INTO personagem (nome) VALUES
-('Canute'),     -- id 1
-('Bjorn'),      -- id 2
-('Thorkell'),   -- id 3
-('Askeladd'),   -- id 4
-('Thors'),      -- id 5
-('Thorgil'),    -- id 6
-('Thorffin'),    -- id 7
-('Olmar'),      -- id 8
-('Cobra'),      -- id 9
-('Arnheid'),    -- id 10
-('Einar');      -- id 11
+INSERT INTO personagem (nome, descricao) VALUES
+('Canute', 'Frio, inteligente e ambicioso.'),      -- id 1
+
+('Bjorn', 'Leal, impulsivo e guerreiro.'),         -- id 2
+
+('Thorkell', 'Ama batalhas e desafios.'),          -- id 3
+
+('Askeladd', 'Estratégico e manipulador.'),        -- id 4
+
+('Thors', 'Pacífico, sábio e honrado.'),           -- id 5
+
+('Thorgil', 'Brutal e apaixonado pela guerra.'),   -- id 6
+
+('Thorffin', 'Busca paz e amadurecimento.'),       -- id 7
+
+('Olmar', 'Inseguro e sonhador.'),                 -- id 8
+
+('Cobra', 'Calmo, protetor e habilidoso.'),        -- id 9
+
+('Arnheid', 'Gentil e resiliente.'),               -- id 10
+
+('Einar', 'Bondoso, trabalhador e otimista.');     -- id 11
 
 
 -- INSERT PERSONALIDADES
